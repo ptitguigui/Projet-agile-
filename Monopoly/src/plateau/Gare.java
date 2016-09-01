@@ -1,5 +1,7 @@
 package plateau;
 
+import java.util.Scanner;
+
 import gameplay.Joueur;
 
 public class Gare extends Terrain {
@@ -12,7 +14,7 @@ public class Gare extends Terrain {
 
 	public void action(Joueur j) {
 		if(this.aVendre()){
-			//menu action
+			
 		}else{
 			if(j != this.getProprietaire()){
 				int tmpLoyer = calculerLoyer(j);
