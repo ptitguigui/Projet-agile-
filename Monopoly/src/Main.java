@@ -26,6 +26,7 @@ public class Main {
 		}
 		while(true){
 			System.out.println("C'est à "+ listeJoueurs.getJoueurActuel() + " de jouer" );
+			D.roll();
 			listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2());
 			System.out.println(listeJoueurs.getJoueurActuel()+" se déplace de "+(D.getD1()+D.getD2())+" cases et arrive sur la case " +listeJoueurs.getJoueur().getPos());
 			System.out.println("Que voulez-vous faire?");
