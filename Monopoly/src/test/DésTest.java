@@ -7,11 +7,11 @@ import org.junit.Test;
 public class DésTest(){
 
 
-@Test
-public void dé(){
-Dés dés = new Dés();
-dés.roll();
-}
+	@Test
+	public void dé(){
+	Dés dés = new Dés();
+	dés.roll();
+	}
 
 /*
 @Test
