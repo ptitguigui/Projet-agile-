@@ -1,4 +1,5 @@
-
+package plateau;
+import gameplay.Joueur;
 
 public class Compagnie extends Terrain{
 
