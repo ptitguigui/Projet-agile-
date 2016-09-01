@@ -16,6 +16,11 @@ public class Plateau {
 		this.plateau.add(new Terrain("Rue Lecourbe", 3, 60, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Terrain("Impôt sur le revenu", 4, 0, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Gare("Gare Montparnasse", 5, 200, 0, null, null));
+		this.plateau.add(new Terrain("Rue Vaugirard", 6, 100, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new Terrain("Chance", 7, 0, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new Terrain("Rue de Courcelles", 8, 100, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new Terrain("Avenue de la République", 9, 0, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new Terrain("Prison",  10, 0, 0, 0, 0, 0, 0, 0, 0, null));
 		
 	}
 	public void parcourirPlateau(){
