@@ -1,3 +1,5 @@
+package gameplay;
+import plateau.Terrain;
 
 public class Joueur{
     String nom;
