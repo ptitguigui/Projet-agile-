@@ -15,12 +15,15 @@ public class Gare extends Terrain {
 			//menu action
 		}else{
 			if(j != this.getProprietaire()){
-				int tmpLoyer = this.loyer; 
-				tmpLoyer = (int) (tmpLoyer*(Math.pow(2, g.nbTerrainJoueur(j)))/2);
+				int tmpLoyer = calculerLoyer(j);
 				j.paye(tmpLoyer); 				
 				this.getProprietaire().recoit(tmpLoyer);
 			}
 		}
+	}
+	
+	public int calculerLoyer(Joueur j){
+		return (int) (this.loyer*(Math.pow(2, g.nbTerrainJoueur(j)))/2);
 	}
 		
 
