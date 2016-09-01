@@ -1,3 +1,5 @@
+package plateau;
+import gameplay.Joueur;
 
 public class Terrain extends Case{
 		protected int prix;
@@ -33,5 +35,6 @@ public class Terrain extends Case{
 	    public int calculerLoyer(){
 	        return (loyer);
 	    }
-
+	    
+	  
 }

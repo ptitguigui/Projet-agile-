@@ -1,3 +1,4 @@
+package plateau;
 
 public class Case {
 	 protected String nom;
@@ -11,5 +12,10 @@ public class Case {
 	public String getNom(){
         return nom;
      }
+
+	@Override
+	public String toString() {
+		return "Case [nom=" + nom + ", numero=" + numero + "]";
+	}
 
 }

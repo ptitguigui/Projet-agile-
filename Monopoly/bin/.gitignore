@@ -1,5 +1,23 @@
+/Case.class
+/Compagnie.class
 /Dés.class
+/GroupeCase.class
+/Joueur.class
+/Terrain.class
 /Test.class
 /test/
+<<<<<<< HEAD
 /Compagnie.class
 /Groupe.class
+=======
+<<<<<<< HEAD
+/Compagnie.class
+/GroupeCase.class
+/Joueur.class
+/Terrain.class
+/Main.class
+=======
+/gameplay/
+/plateau/
+>>>>>>> branch 'master' of https://github.com/ptitguigui/Projet-agile-.git
+>>>>>>> branch 'master' of https://github.com/ptitguigui/Projet-agile-.git

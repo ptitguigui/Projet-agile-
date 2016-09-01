@@ -1,13 +1,18 @@
+package gameplay;
+import java.util.ArrayList;
+
+import plateau.Terrain;
 
 public class Joueur{
     String nom;
     int credit;
     int pos;
+    ArrayList<Terrain> achats;
 
     public Joueur(String nom){
         this.nom=nom;
         credit=20000;
-        pos=-1;
+        pos=0;
     }
 
     public String getNom(){
@@ -30,6 +35,7 @@ public class Joueur{
         if ( ct.aVendre() && credit>=ct.getPrix() ){
             credit-=ct.getPrix();
             ct.setProprietaire(this);
+            achats.add(ct);
         }
     }
 
@@ -43,5 +49,10 @@ public class Joueur{
 
     public void recoit(int loyer){
         credit+=loyer;
+    }
+    
+    public void seDeplace(int D1, int D2){
+    	//Condition sur la prison à ajouter.
+    	this.setPos(D1+D2);
     }
 }
