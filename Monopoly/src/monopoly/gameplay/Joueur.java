@@ -2,6 +2,7 @@ package monopoly.gameplay;
 import java.util.ArrayList;
 
 import monopoly.plateau.Case;
+import monopoly.plateau.Compagnie;
 import monopoly.plateau.Terrain;
 import monopoly.plateau.Gare;
 
@@ -9,12 +10,13 @@ public class Joueur{
     String nom;
     int credit;
     int pos;
-    ArrayList<Case> achats;
+    ArrayList<Case> achats = null;
 
     public Joueur(String nom){
         this.nom=nom;
         credit=20000;
         pos=0;
+        achats = new ArrayList<>();
     }
 
     public String getNom(){
@@ -33,11 +35,11 @@ public class Joueur{
         return (credit);
     }
 
-    public void acheter(Terrain ct){
-        if ( ct.aVendre() && credit>=ct.getPrix() ){
-            credit-=ct.getPrix();
-            ct.setProprietaire(this);
-            achats.add(ct);
+    public void acheter(Compagnie compagnie){
+        if ( compagnie.aVendre() && credit>=compagnie.getPrix() ){
+            credit-=compagnie.getPrix();
+            compagnie.setProprietaire(this);
+            achats.add(compagnie);
         }
     }
     
