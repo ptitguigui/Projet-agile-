@@ -14,7 +14,7 @@ public class Case {
 	public String getNom(){
         return nom;
      }
-
+	
 	public int getNumero() {
 		return numero;
 	}
@@ -34,6 +34,9 @@ public class Case {
 			//j.recoit(1);
 		//}
 	//}
+	public void action(Joueur j){
+		this.action(j);
+	}
 	
 
 }
