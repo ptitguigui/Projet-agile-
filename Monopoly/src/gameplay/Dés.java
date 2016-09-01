@@ -9,10 +9,11 @@ public class Dés {
 	
 	public void roll(){
 		Random r = new Random();
-		d1 = r.nextInt(5)+1;
-		d2 = r.nextInt(5)+1;
+		d1 = r.nextInt(6)+1;
+		d2 = r.nextInt(6)+1;
 		estDouble();
 		tripleDouble();
+		System.out.println("Le joueur lance les dés et obient "+this.getD1() + " et "+ this.getD2());
 	}
 	
 	public int getD1(){
