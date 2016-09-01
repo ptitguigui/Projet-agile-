@@ -27,8 +27,8 @@ public class Main {
 		while(true){
 			//Début de Tour
 			Joueur j = listeJoueurs.getJoueur();
-			System.out.println("C'est à "+ j.getJoueur() + " de jouer" );
-			System.out.println("Vous avez "+j.getJoueur());
+			System.out.println("C'est à "+ j.getNom() + " de jouer" );
+			System.out.println("Vous avez "+j.getCredit());
 			
 			// Déplacement
 			int pos1Joueur = j.getPos();
@@ -53,7 +53,6 @@ public class Main {
 			
 			//Choix des actions
 			System.out.println("Que voulez-vous faire?");
-			if (j.getPos() && )
 			
 			
 			System.out.println("4. Passez votre tour");
