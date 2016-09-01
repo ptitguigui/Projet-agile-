@@ -1,15 +1,18 @@
-
+import gameplay.Joueur;
+import plateau.GroupeCase;
+import plateau.Terrain;
 
 public class Compagnie extends Terrain{
-	public Compagnie(String nom, int num, int p, int l, Joueur j) {
-		super(nom, num, p, l, j);		
+	GroupeCase g;
+	public Compagnie(String nom, int num, int p, int l, Joueur j,GroupeCase g) {
+		super(nom, num, p, l, j);	
+		this.g=g;
+		
 	}
-	public int calculloyer (){
-		int de=(int)(12*Math.random());
-        int pay;
-        //if (nomGroupe.uniqueProprietaire(proprio) )
-        {pay=de*1000;
+	public int calculloyer (int d1, int d2){
 		return 0;
+		
 	}
 	
 }
+	
