@@ -12,9 +12,9 @@ public class Plateau {
 		this.plateau = new ArrayList<>();
 		this.plateau.add(new Terrain("Case départ", 0, 0, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Terrain("Boulevard de Belleville", 1, 200, 0, 0, 0, 0, 0, 0, 0, null));
-		this.plateau.add(new Gare("Gare Montparnasse", 2, 300, 0, null, null));
+		this.plateau.add(new Gare("Gare Montparnasse", 2, 200, 0, null, null));
 		for(int i = 3; i<40;i++){
-			this.plateau.add(new Terrain(Integer.toString(i), 1, 200, 0, 0, 0, 0, 0, 0, 0, null));
+			this.plateau.add(new Gare("Gare lol", i, 200, 0, null, null));
 		}
 	}
 	public void parcourirPlateau(){
