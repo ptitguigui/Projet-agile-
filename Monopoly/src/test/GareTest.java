@@ -35,7 +35,7 @@ public class GareTest {
 	
 	
 	@Test
-	public void quatre_gare(){
+	public void quatre_gares(){
 		Gare g1 = new Gare("g1",1,200,25,j1,groupe);
 		Gare g2 = new Gare("g2",2,200,25,j1,groupe);
 		Gare g3 = new Gare("g3",3,200,25,j1,groupe);
@@ -47,6 +47,20 @@ public class GareTest {
 		
 		assertEquals(200,g2.calculerLoyer(j1));
 		assertFalse(100 == g2.calculerLoyer(j1));
+		assertFalse(200 == g2.calculerLoyer(j2));
+	}
+	
+	@Test
+	public void trois_gares(){
+		Gare g1 = new Gare("g1",1,200,25,j1,groupe);
+		Gare g2 = new Gare("g2",2,200,25,j1,groupe);
+		Gare g3 = new Gare("g3",3,200,25,j1,groupe);
+		groupe.ajouterCase(g1);
+		groupe.ajouterCase(g2);
+		groupe.ajouterCase(g3);
+		
+		assertEquals(100,g2.calculerLoyer(j1));
+		assertFalse(50 == g2.calculerLoyer(j1));
 		assertFalse(200 == g2.calculerLoyer(j2));
 	}
 	
