@@ -3,10 +3,9 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 import gameplay.Dés;
-import gameplay.ListeJoueurs;
-import plateau.Plateau;
 import gameplay.Joueur;
 import gameplay.ListeJoueurs;
+import plateau.Plateau;
 
 public class Main {
 	public static void main(String[] args) {
