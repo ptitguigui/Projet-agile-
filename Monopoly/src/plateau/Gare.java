@@ -20,7 +20,10 @@ public class Gare extends Terrain {
 				this.getProprietaire().recoit(tmpLoyer);
 			}
 		}
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/ptitguigui/Projet-agile-.git
 	}
 	
 	public int calculerLoyer(Joueur j){

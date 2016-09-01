@@ -3,13 +3,14 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 import gameplay.Dés;
-import gameplay.ListeJoueurs;
 import gameplay.Joueur;
 import gameplay.ListeJoueurs;
+import plateau.Plateau;
 
 public class Main {
 	public static void main(String[] args) {
-
+		
+		Plateau jeu = new Plateau();
 		ListeJoueurs listeJoueurs = new ListeJoueurs();
 		Dés D = new Dés();
 		System.out.println("Bienvenue dans Monopoly !\nCombien de joueur y a-t-il ?");
@@ -33,12 +34,17 @@ public class Main {
 			// Déplacement
 			int pos1Joueur = j.getPos();
 			D.roll();
-			j.seDeplace(D.getD1(), D.getD2());
+			listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2());
+			jeu.declancheAction(listeJoueurs.getJoueur());
+			System.out.println(listeJoueurs.getJoueur().getNom()+" se déplace de "+(D.getD1()+D.getD2())+" cases et arrive sur la case " +listeJoueurs.getJoueur().getPos());
 			System.out.println(j.getNom()+" se déplace de "+(D.getD1()+D.getD2())+" cases et arrive sur la case " +j.getPos());
 			
 			if (D.estDouble() && !D.tripleDouble()) {
 				D.roll();
+				listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2());
+				jeu.declancheAction(listeJoueurs.getJoueur());
 				System.out.println("C'est un Double !"+j.getNom()+" se déplace de "+(D.getD1()+D.getD2())+" cases et arrive sur la case " +j.getPos());
+				
 			} else if (D.estDouble()) {
 				D.roll();
 				System.out.println("Trois doubles d'affilée ! Vous finissez en prison !");
