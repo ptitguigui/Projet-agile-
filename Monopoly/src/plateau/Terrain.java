@@ -37,7 +37,7 @@ public abstract class Terrain extends Case{
 	    }
 
 		
-		public abstract void action();
+		public abstract void action(Joueur j);
 	    
 	  
 }
