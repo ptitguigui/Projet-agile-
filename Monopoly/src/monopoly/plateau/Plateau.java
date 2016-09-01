@@ -28,5 +28,13 @@ public class Plateau {
 	public void declancheAction(Joueur j){
 		this.getCase(j.getPos()).action(j);
 	}
+	
+	public void parcourirTerrain() {
+		for (int i = 0; i < plateau.size(); i++) {
+			if (plateau.get(i) instanceof Terrain) {
+				System.out.println(i+" "+plateau.get(i).toString());
+			}
+		}
+	}
 
 }
