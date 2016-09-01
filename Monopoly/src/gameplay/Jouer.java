@@ -72,6 +72,10 @@ public class Jouer {
 		return listeJoueurs.get(JoueurActuel).getNom();
 	}
 	
+	public Joueur getJoueur() {
+		return listeJoueurs.get(JoueurActuel);
+	}
+	
 	public int getNbJoueurs() {
 		return listeJoueurs.size();
 	}
