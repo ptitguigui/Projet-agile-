@@ -1,7 +1,7 @@
 package gameplay;
 import java.util.Random;
 
-public class Dés {
+public class Des {
 
 	int d1=0;
 	int d2=0;
