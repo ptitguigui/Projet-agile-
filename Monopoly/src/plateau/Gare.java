@@ -1,12 +1,6 @@
 package plateau;
 
-import gameplay.Joueur;
 
-<<<<<<< HEAD
-	public Gare(String nom, int num) {
-		super(nom, num);
-		
-=======
 public class Gare extends Terrain {
 
 	GroupeCase g;	
@@ -25,7 +19,7 @@ public class Gare extends Terrain {
 				this.getProprietaire().recoit(tmpLoyer);
 			}
 		}
->>>>>>> cfec5db2795933425336aab21bb2820ec7665ece
+
 	}
 	
 	public int calculerLoyer(Joueur j){
