@@ -1,4 +1,4 @@
-package gameplay;
+package monopoly.gameplay;
 import java.util.Random;
 
 public class Des {
@@ -34,7 +34,6 @@ public class Des {
 	public boolean tripleDouble(){
 		if(cpt == 3){
 			cpt=0;
-			System.out.println("Vous avez fait 3 double");
 			return true;
 		}else{
 			return false;

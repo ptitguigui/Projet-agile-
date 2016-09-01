@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import gameplay.Joueur;
-import plateau.Terrain;
+import monopoly.gameplay.Joueur;
+import monopoly.plateau.Terrain;
 
 public class testJoueur {
 	
