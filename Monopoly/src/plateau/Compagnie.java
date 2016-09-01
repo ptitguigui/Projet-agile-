@@ -27,7 +27,7 @@ public class Compagnie extends Terrain{
 				}else if(choix == 2){
 					done = true;
 				}else{
-					System.out.println("Vous ne pouvez pas faire cela.");
+					System.out.println("faites un bon choix!!!!!!");
 				}
 			}
 		}else{
