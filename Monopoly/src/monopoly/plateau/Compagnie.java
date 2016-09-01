@@ -1,7 +1,7 @@
-package plateau;
-import gameplay.Joueur;
-import plateau.GroupeCase;
-import plateau.Terrain;
+package monopoly.plateau;
+import monopoly.gameplay.Joueur;
+import monopoly.plateau.GroupeCase;
+import monopoly.plateau.Terrain;
 
 public class Compagnie extends Terrain{
 	GroupeCase g;

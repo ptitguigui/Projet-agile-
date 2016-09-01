@@ -1,4 +1,4 @@
-package plateau;
+package monopoly.plateau;
 
 import java.util.ArrayList;
 import java.util.Collections;

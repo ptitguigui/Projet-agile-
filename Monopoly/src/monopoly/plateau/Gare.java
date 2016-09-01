@@ -1,8 +1,8 @@
-package plateau;
+package monopoly.plateau;
 
 import java.util.Scanner;
 
-import gameplay.Joueur;
+import monopoly.gameplay.Joueur;
 
 public class Gare extends Terrain {
 

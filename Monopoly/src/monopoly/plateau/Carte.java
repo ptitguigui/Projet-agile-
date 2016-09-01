@@ -1,4 +1,4 @@
-package plateau;
+package monopoly.plateau;
 
 public class Carte {
 	

@@ -1,7 +1,7 @@
-package plateau;
+package monopoly.plateau;
 import java.util.ArrayList;
 
-import gameplay.Joueur;
+import monopoly.gameplay.Joueur;
 
 public class GroupeCase {
 	private ArrayList<Case> lesCases;

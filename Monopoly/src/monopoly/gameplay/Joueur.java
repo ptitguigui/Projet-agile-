@@ -1,9 +1,7 @@
-package gameplay;
+package monopoly.gameplay;
 import java.util.ArrayList;
 
-import plateau.Carte;
-import plateau.Paquet;
-import plateau.Terrain;
+import monopoly.plateau.Terrain;
 
 public class Joueur{
     String nom;
@@ -55,9 +53,7 @@ public class Joueur{
     public void caseDepart() {
     	credit += 10;
     }
-    public Carte Piocher(Paquet p) {
-    	return p.piocher();
-    }
+  
     public void seDeplace(int D1, int D2){
     	//Condition sur la prison à ajouter.
     	if(this.getPos()+D1+D2 <=39){

@@ -1,8 +1,10 @@
 package test;
 
 import org.junit.Test;
+
+import monopoly.gameplay.Joueur;
+
 import static org.junit.Assert.*;
-import gameplay.Joueur;
 
 
 public class TestCaseDepart {

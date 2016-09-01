@@ -1,9 +1,9 @@
 package test;
-import gameplay.Des;
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import monopoly.gameplay.Des;
 
 public class DésTest{
 

@@ -1,5 +1,5 @@
-package plateau;
-import gameplay.Joueur;
+package monopoly.plateau;
+import monopoly.gameplay.Joueur;
 
 public class Terrain extends Case{
 		protected int prix;
@@ -38,9 +38,4 @@ public class Terrain extends Case{
 	    }
 
 		
-<<<<<<< HEAD
-=======
-	    
-	  
->>>>>>> 5560dca7c52bb735c6cbf033e5b601b08a73b18d
 }
