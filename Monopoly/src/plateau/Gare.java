@@ -1,5 +1,6 @@
 package plateau;
 
+import gameplay.Joueur;
 
 public class Gare extends Terrain {
 
@@ -19,7 +20,6 @@ public class Gare extends Terrain {
 				this.getProprietaire().recoit(tmpLoyer);
 			}
 		}
-
 	}
 	
 	public int calculerLoyer(Joueur j){
