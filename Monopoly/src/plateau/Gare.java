@@ -15,7 +15,7 @@ public class Gare extends Terrain {
 			//menu action
 		}else{
 			if(j != this.getProprietaire()){
-				int tmpLoyer = this.loyer; //implémenter calcul de plusieurs gares
+				int tmpLoyer = this.loyer; 
 				tmpLoyer = (int) (tmpLoyer*(Math.pow(2, g.nbTerrainJoueur(j)))/2);
 				j.paye(tmpLoyer); 				
 				this.getProprietaire().recoit(tmpLoyer);
