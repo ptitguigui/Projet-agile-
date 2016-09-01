@@ -20,6 +20,7 @@ public class Plateau {
 			System.out.println(plateau.get(i).toString());
 		}
 	}
+	
 	public Case getCase(int i) {
 		return plateau.get(i);
 	}

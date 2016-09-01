@@ -1,35 +1,27 @@
 package plateau;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import gameplay.Joueur;
 
 public class Terrain extends Case{
 		protected int prix;
-	    protected int loyer;
+		int loyer=0;
+		private ArrayList<Integer> loyers = new ArrayList<Integer>();
 	    protected Joueur proprio;
 	    private int nbMaisons =0;
 	    private int prixMaison; 
-	    
-	    //Terrain Non-constructible (gare et compagnies)
-	    public Terrain(String nom,int num,int p, int l, Joueur j){
-	        super(nom,num);
-	        prix=p;
-	        loyer=l;
-	        proprio=j;
-	    }
-	    
-	    //Terrain Constructible (obsolète)
-	    public Terrain(String nom,int num,int p, int l, int pm, Joueur j){
-	        super(nom,num);
-	        prix=p;
-	        loyer=l;
-	        proprio=j;
-	        prixMaison=pm;
-	    }
 	    
 	    //Terrain Constructible
 	    public Terrain(String nom,int num,int p, int l, int l1, int l2, int l3, int l4, int lh, int pm, Joueur j){
 	        super(nom,num);
 	        prix=p;
-	        loyer=l;
+	        loyers.add(l);
+	        loyers.add(l1);
+	        loyers.add(l2);
+	        loyers.add(l3);
+	        loyers.add(l4);
+	        loyers.add(lh);
 	        proprio=j;
 	        prixMaison=pm;
 	    }
@@ -55,7 +47,7 @@ public class Terrain extends Case{
 	    }
 
 	    public int calculerLoyer(){
-	        return (loyer);
+	    	return loyers.get(loyer); 
 	    }
 
 		public int getNbMaisons(){
@@ -65,5 +57,6 @@ public class Terrain extends Case{
 		public void ajoutMaison(int nbMaisons){
 			proprio.paye(prixMaison*nbMaisons);
 			this.nbMaisons += nbMaisons;
+				loyer ++;
 		}
 }
