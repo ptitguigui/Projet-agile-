@@ -16,5 +16,4 @@ public class DeplacementTest {
 		test.seDeplace(D1, D2);
 		assertEquals(4, test.getPos());
 	}
-
 }
