@@ -5,7 +5,7 @@ import java.util.Scanner;
 import monopoly.gameplay.Joueur;
 
 
-public class Compagnie extends Terrain{
+public class Compagnie extends Case{
 	GroupeCase g;
 	public Compagnie(String nom, int num, int p, int l, Joueur j,GroupeCase g) {
 		super(nom, num, p, l, j);	
@@ -26,7 +26,7 @@ public class Compagnie extends Terrain{
 				}else if(choix == 2){
 					done = true;
 				}else{
-					System.out.println("Vous ne pouvez pas faire cela.");
+					System.out.println("faites un bon choix!!!!!!");
 				}
 			}
 		}else{

@@ -6,7 +6,6 @@ import monopoly.gameplay.Joueur;
 
 public class Terrain extends Case{
 		protected int prix;
-		int loyer=0;
 		private ArrayList<Integer> loyers = new ArrayList<Integer>();
 	    protected Joueur proprio;
 	    private int nbMaisons =0;
@@ -47,7 +46,7 @@ public class Terrain extends Case{
 	    }
 
 	    public int calculerLoyer(){
-	    	return loyers.get(loyer); 
+	    	return loyers.get(nbMaisons); 
 	    }
 
 
@@ -58,7 +57,12 @@ public class Terrain extends Case{
 		public void ajoutMaison(int nbMaisons){
 			proprio.paye(prixMaison*nbMaisons);
 			this.nbMaisons += nbMaisons;
-				loyer ++;
+		}
+
+		@Override
+		public void action(Joueur j) {
+			// TODO Auto-generated method stub
+			
 		}
 
 }

@@ -29,6 +29,7 @@ public class Main {
 			communaute.add(com[i]);
 		}
 
+
 		ListeJoueurs listeJoueurs = new ListeJoueurs();
 		Des D = new Des();
 		System.out.println("Bienvenue dans Monopoly !\nCombien de joueur y a-t-il ?");
@@ -76,36 +77,41 @@ public class Main {
 				System.out.println("Vous êtes passé par la case départ !");
 				j.caseDepart();
 			}
+
 			int choix = 0;
-			while (choix != 4) {
-				// Choix des actions
-				System.out.println("Que voulez-vous faire?");
+			while (choix != 4) {	
+			
+			//Choix des actions
+			System.out.println("Que voulez-vous faire?");
 
-				System.out.println("1.Piocher une carte");
+			
+			System.out.println("1.Piocher une carte");
 
-				System.out.println("2. Hypothéquer");
-				System.out.println("3. Echanger");
-
-				System.out.println("4. Passez votre tour");
-				System.out.println("5. Construire une maison");
-				Scanner in2 = new Scanner(System.in);
-				choix = in2.nextInt();
-
-				// Réalisation des actions
-				if (choix == 5) {
-					System.out.println("Voici la liste des Terrains");
-					jeu.parcourirTerrain();
-					System.out.println("Indiquez le numéro de la case sur lequel vous voulez construire");
-					Scanner in3 = new Scanner(System.in);
-					int choix2 = in3.nextInt();
-
-				} else if (choix == 1) {
-
-					System.out.println(j.getNom() + "a pioché :" + chance.piocher());
-					System.out.println(j.getNom() + "a pioché" + communaute.piocher());
-
-				} else {
-				}
+			System.out.println("2. Construire une maison");
+			System.out.println("3. Hypothéquer");
+			System.out.println("4. Echanger");
+			
+			System.out.println("5. Passez votre tour");
+			Scanner in2= new Scanner(System.in);
+		 choix = in2.nextInt();
+			
+			//Réalisation des actions
+			if (choix==2) {
+				System.out.println("Voici la liste des Terrains");
+				jeu.parcourirTerrain();
+				System.out.println("Indiquez le numéro de la case sur lequel vous voulez construire");
+				Scanner in3 = new Scanner(System.in);
+				int choix2 = in3.nextInt();
+				
+				jeu.getCase(choix2).ajouterMaison(1);
+				System.out.println("Le nouveau loyer est de :" + jeu.getCase(choix2).calculerLoyer());
+			} else if (choix == 1) {
+				
+				System.out.println(j.getNom() + "a pioché :"+chance.piocher());
+				System.out.println(j.getNom()+"a pioché"+communaute.piocher());
+				
+			}else{
+			}
 				System.out.println("Vous ne pouvez pas faire ça");
 			}
 
