@@ -1,3 +1,4 @@
+package plateau;
 import gameplay.Joueur;
 import plateau.GroupeCase;
 import plateau.Terrain;
@@ -10,7 +11,13 @@ public class Compagnie extends Terrain{
 		
 	}
 	public int calculloyer (int d1, int d2){
-		return 0;
+		int loyer=0;
+		if(g.seulproprio(proprio)){
+			loyer=(d1+d2)*10;			
+		}else{
+			loyer=(d1+d2)*4;
+		}
+		return loyer;
 		
 	}
 	
