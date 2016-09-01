@@ -1,3 +1,5 @@
+package plateau;
+import gameplay.Joueur;
 
 public class Terrain extends Case{
 		protected int prix;

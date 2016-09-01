@@ -1,3 +1,4 @@
+package plateau;
 
 public class Case {
 	 protected String nom;
