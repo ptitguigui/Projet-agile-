@@ -6,10 +6,17 @@ import monopoly.gameplay.Joueur;
 
 
 public class Compagnie extends Case{
+	
 	GroupeCase g;
+	protected int prix;
+    protected int loyer;
+    protected Joueur proprio;
 	public Compagnie(String nom, int num, int p, int l, Joueur j,GroupeCase g) {
-		super(nom, num, p, l, j);	
+		super(nom, num);	
 		this.g=g;
+		 prix=p;
+	     loyer=l;
+	     proprio=j;
 		
 	}
 	public void action(Joueur j) {
@@ -47,7 +54,22 @@ public class Compagnie extends Case{
 			loyer=(d1+d2)*4;
 		}
 		return loyer;
+	}
+	public int getPrix(){
+        return (prix);
+	}
+
+	public Joueur getProprietaire(){
+		return (proprio);
+	}
+
+	public void setProprietaire(Joueur j){
+		proprio=j;
 	}	
+
+	public boolean aVendre(){
+		return (proprio==null);
+	}
 	
 	
 }

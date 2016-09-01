@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import monopoly.gameplay.Joueur;
+import monopoly.plateau.Compagnie;
 import monopoly.plateau.Terrain;
 
 public class testJoueur {
@@ -24,14 +25,14 @@ public class testJoueur {
 		
 	}
 	//@Test
-	public void test2() {
+	/*public void test2() {
 		Joueur j1=new Joueur("paul");
-		Terrain rue1=new Terrain("boulevart", 2, 200, 20, 40, 60, 80, 100, 120, 150, null);
+		Terrain rue1=new Terrain("boulevart", 2, 200, 20, null);
 		j1.acheter(rue1);
 		assertEquals(rue1.getProprietaire(),j1);
 		assertEquals(j1.getCredit(), 20000);
 				
-	}
+	}*/
 	@Test
 	public void test3(){
 		Joueur j=new Joueur("barry");
