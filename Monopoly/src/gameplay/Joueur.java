@@ -50,7 +50,9 @@ public class Joueur{
     public void recoit(int loyer){
         credit+=loyer;
     }
-    
+    public void caseDepart() {
+    	credit += 10;
+    }
     public void seDeplace(int D1, int D2){
     	//Condition sur la prison à ajouter.
     	if(this.getPos()+D1+D2 <=39){
