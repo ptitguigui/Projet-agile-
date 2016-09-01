@@ -1,3 +1,4 @@
+package plateau;
 import gameplay.Joueur;
 import plateau.GroupeCase;
 import plateau.Terrain;
