@@ -16,6 +16,9 @@ public class Main {
 			name = JOptionPane.showInputDialog(null, "Entrez votre pseudo");
 			joueurs.add(new Joueur(name));
 		}
+		for(Joueur j : joueurs){
+			System.out.println("Le joueur "+j.getNom()+" possède "+j.getCredit()+"€ en banque.");
+		}
 		while(true){
 			
 		}

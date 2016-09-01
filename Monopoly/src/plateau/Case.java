@@ -17,5 +17,4 @@ public class Case {
 	public String toString() {
 		return "Case [nom=" + nom + ", numero=" + numero + "]";
 	}
-
 }
