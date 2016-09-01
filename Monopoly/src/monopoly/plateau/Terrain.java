@@ -1,8 +1,8 @@
-package plateau;
+package monopoly.plateau;
 import java.util.ArrayList;
-import java.util.Iterator;
 
-import gameplay.Joueur;
+import monopoly.gameplay.Joueur;
+
 
 public class Terrain extends Case{
 		protected int prix;
@@ -11,7 +11,7 @@ public class Terrain extends Case{
 	    protected Joueur proprio;
 	    private int nbMaisons =0;
 	    private int prixMaison; 
-	    
+	   
 	    //Terrain Constructible
 	    public Terrain(String nom,int num,int p, int l, int l1, int l2, int l3, int l4, int lh, int pm, Joueur j){
 	        super(nom,num);
@@ -50,6 +50,7 @@ public class Terrain extends Case{
 	    	return loyers.get(loyer); 
 	    }
 
+
 		public int getNbMaisons(){
 			return nbMaisons;
 		}
@@ -59,4 +60,5 @@ public class Terrain extends Case{
 			this.nbMaisons += nbMaisons;
 				loyer ++;
 		}
+
 }

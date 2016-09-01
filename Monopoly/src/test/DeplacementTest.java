@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import gameplay.Joueur;
+import monopoly.gameplay.Joueur;
 
 public class DeplacementTest {
 

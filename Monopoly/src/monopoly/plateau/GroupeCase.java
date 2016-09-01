@@ -1,7 +1,7 @@
-package plateau;
+package monopoly.plateau;
 import java.util.ArrayList;
 
-import gameplay.Joueur;
+import monopoly.gameplay.Joueur;
 
 public class GroupeCase {
 	private ArrayList<Case> lesCases;
@@ -25,7 +25,7 @@ public class GroupeCase {
 		
 		return (nbTerrainJoueur(j)==lesCases.size());
 	}
-	public void ajouterCase(Terrain t){
+	public void ajouterCase(Case t){
 		lesCases.add(t);
 	}
 	public String getNom(){
