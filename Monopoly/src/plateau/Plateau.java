@@ -9,7 +9,8 @@ public class Plateau {
 	public Plateau() {
 		
 		this.plateau = new ArrayList<>(40);
-		for (int i = 0; i <plateau.size(); i++){
+		plateau.add(0, new CaseDépart());
+		for (int i = 1; i <plateau.size(); i++){
 			plateau.add(new Case(Integer.toString(i),i));
 			}
 		}

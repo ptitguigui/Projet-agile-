@@ -1,4 +1,5 @@
 package plateau;
+import gameplay.Joueur;
 
 public class Case {
 	 protected String nom;
@@ -13,8 +14,8 @@ public class Case {
         return nom;
      }
 
-	@Override
 	public String toString() {
 		return "Case [nom=" + nom + ", numero=" + numero + "]";
 	}
+
 }
