@@ -14,6 +14,10 @@ public class Case {
 	public String getNom(){
         return nom;
      }
+	
+	public int getNum(){
+		return numero;
+	}
 
 	public int getNumero() {
 		return numero;

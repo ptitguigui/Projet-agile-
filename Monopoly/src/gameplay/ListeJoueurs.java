@@ -7,15 +7,7 @@ public class ListeJoueurs {
 	private ArrayList<Joueur> listeJoueurs = new ArrayList<Joueur>();
 	private int JoueurActuel; 
 	
-
-	public ListeJoueurs() {
-}
 	
-	
-	
-	public String getJoueurActuel() {
-		return listeJoueurs.get(JoueurActuel).getNom();
-	}
 	
 	public Joueur getJoueur() {
 		return listeJoueurs.get(JoueurActuel);
