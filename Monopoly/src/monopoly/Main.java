@@ -10,6 +10,7 @@ import monopoly.gameplay.ListeJoueurs;
 import monopoly.plateau.Carte;
 import monopoly.plateau.Paquet;
 import monopoly.plateau.Plateau;
+import monopoly.plateau.Terrain;
 
 public class Main {
 
@@ -86,7 +87,7 @@ public class Main {
 
 			
 			System.out.println("1.Piocher une carte");
-
+			
 			System.out.println("2. Construire une maison");
 			System.out.println("3. Hypothéquer");
 			System.out.println("4. Echanger");
@@ -102,9 +103,9 @@ public class Main {
 				System.out.println("Indiquez le numéro de la case sur lequel vous voulez construire");
 				Scanner in3 = new Scanner(System.in);
 				int choix2 = in3.nextInt();
-				
-				jeu.getCase(choix2).ajouterMaison(1);
-				System.out.println("Le nouveau loyer est de :" + jeu.getCase(choix2).calculerLoyer());
+				Terrain t = (Terrain) jeu.getCase(choix2);
+				t.ajoutMaison(1);
+				System.out.println("Le nouveau loyer est de :" + t.calculerLoyer());
 			} else if (choix == 1) {
 				
 				System.out.println(j.getNom() + "a pioché :"+chance.piocher());
