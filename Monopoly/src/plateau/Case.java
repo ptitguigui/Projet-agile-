@@ -2,7 +2,7 @@ package plateau;
 
 import gameplay.Joueur;
 
-public class Case {
+public abstract class Case {
 	 protected String nom;
      protected int numero;
 
@@ -34,9 +34,7 @@ public class Case {
 			//j.recoit(1);
 		//}
 	//}
-	public void action(Joueur j){
-		this.action(j);
-	}
+	public abstract void action(Joueur j);
 	
 
 }

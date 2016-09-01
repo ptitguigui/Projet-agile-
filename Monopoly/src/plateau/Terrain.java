@@ -36,6 +36,12 @@ public class Terrain extends Case{
 	        return (loyer);
 	    }
 
+		@Override
+		public void action(Joueur j) {
+			// TODO Auto-generated method stub
+			
+		}
+
 		
 	    
 	  

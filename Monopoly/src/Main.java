@@ -11,6 +11,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Plateau jeu = new Plateau();
+		System.out.println(jeu.getPlateau().size());
 		ListeJoueurs listeJoueurs = new ListeJoueurs();
 		Des D = new Des();
 		System.out.println("Bienvenue dans Monopoly !\nCombien de joueur y a-t-il ?");
