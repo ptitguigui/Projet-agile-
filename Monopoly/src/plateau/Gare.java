@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import gameplay.Joueur;
 
-
 public class Gare extends Terrain {
 
 	GroupeCase g;	
