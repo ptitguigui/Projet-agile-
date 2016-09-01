@@ -49,5 +49,6 @@ public class Compagnie extends Case{
 		return loyer;
 	}	
 	
+	
 }
 	
