@@ -8,8 +8,7 @@ public class Case {
 		this.numero=num;
 	}
 
-	public String getNom()
-     {
+	public String getNom(){
         return nom;
      }
 
