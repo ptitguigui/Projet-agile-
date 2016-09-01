@@ -34,6 +34,9 @@ public class Case {
 			//j.recoit(1);
 		//}
 	//}
+	public void action(Joueur j){
+		this.action(j);
+	}
 	
 
 }

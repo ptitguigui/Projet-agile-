@@ -60,7 +60,8 @@ public class Joueur{
     	}else{
     		int nb = this.getPos()+D1+D2;
     		this.setPos(nb-40);
-    		
-    	}
+      	}
+    	
     }
+    
 }

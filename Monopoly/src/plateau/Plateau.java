@@ -2,6 +2,8 @@ package plateau;
 
 import java.util.ArrayList;
 
+import gameplay.Joueur;
+
 public class Plateau {
 	
 	ArrayList<Case> plateau;
@@ -18,8 +20,12 @@ public class Plateau {
 			System.out.println(plateau.get(i).toString());
 		}
 	}
-	public Case get(int i) {
-		return this.get(i);
+	public Case getCase(int i) {
+		return plateau.get(i);
+	}
+	
+	public void declancheAction(Joueur j){
+		this.getCase(j.getPos()).action(j);
 	}
 
 }

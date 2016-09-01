@@ -4,12 +4,14 @@ import javax.swing.JOptionPane;
 
 import gameplay.Dés;
 import gameplay.ListeJoueurs;
+import plateau.Plateau;
 import gameplay.Joueur;
 import gameplay.ListeJoueurs;
 
 public class Main {
 	public static void main(String[] args) {
-
+		
+		Plateau jeu = new Plateau();
 		ListeJoueurs listeJoueurs = new ListeJoueurs();
 		Dés D = new Dés();
 		System.out.println("Bienvenue dans Monopoly !\nCombien de joueur y a-t-il ?");
@@ -28,6 +30,7 @@ public class Main {
 			System.out.println("C'est à "+ listeJoueurs.getJoueurActuel() + " de jouer" );
 			D.roll();
 			listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2());
+			jeu.declancheAction(listeJoueurs.getJoueur());
 			System.out.println(listeJoueurs.getJoueurActuel()+" se déplace de "+(D.getD1()+D.getD2())+" cases et arrive sur la case " +listeJoueurs.getJoueur().getPos());
 			System.out.println("Que voulez-vous faire?");
 			System.out.println("4. Passez votre tour");
