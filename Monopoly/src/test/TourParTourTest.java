@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import gameplay.ListeJoueurs;
-import gameplay.Joueur;
+import monopoly.gameplay.Joueur;
+import monopoly.gameplay.ListeJoueurs;
 
 public class TourParTourTest {
 	

@@ -1,8 +1,8 @@
-package plateau;
+package monopoly.plateau;
 
 import java.util.ArrayList;
 
-import gameplay.Joueur;
+import monopoly.gameplay.Joueur;
 
 public class Plateau {
 	
@@ -20,6 +20,7 @@ public class Plateau {
 			System.out.println(plateau.get(i).toString());
 		}
 	}
+	
 	public Case getCase(int i) {
 		return plateau.get(i);
 	}

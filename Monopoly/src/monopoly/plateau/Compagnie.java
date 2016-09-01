@@ -1,10 +1,9 @@
-package plateau;
+
+package monopoly.plateau;
 import java.util.Scanner;
 
-import gameplay.Des;
-import gameplay.Joueur;
-import plateau.GroupeCase;
-import plateau.Terrain;
+import monopoly.gameplay.Joueur;
+
 
 public class Compagnie extends Terrain{
 	GroupeCase g;
