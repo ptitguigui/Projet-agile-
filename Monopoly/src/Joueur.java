@@ -26,7 +26,7 @@ public class Joueur{
         return (credit);
     }
 
-    public void acheter(CaseTerrain ct){
+    public void acheter(Terrain ct){
         if ( ct.aVendre() && credit>=ct.getPrix() ){
             credit-=ct.getPrix();
             ct.setProprietaire(this);
