@@ -1,6 +1,6 @@
 package plateau;
 
-public class Case {
+public abstract class Case {
 	 protected String nom;
      protected int numero;
 
@@ -17,5 +17,7 @@ public class Case {
 	public String toString() {
 		return "Case [nom=" + nom + ", numero=" + numero + "]";
 	}
+	
+	public abstract void action();
 
 }
