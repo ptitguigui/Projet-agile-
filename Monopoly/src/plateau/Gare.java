@@ -4,8 +4,10 @@ import gameplay.Joueur;
 
 public class Gare extends Terrain {
 
-	public Gare(String nom,int num,int p, int l, Joueur j) {
+	GroupeCase g;	
+	public Gare(String nom,int num,int p, int l, Joueur j,GroupeCase g) {
 		super(nom,num,p,l,j);
+		this.g = g;
 	}
 
 	public void action(Joueur j) {
@@ -14,24 +16,12 @@ public class Gare extends Terrain {
 		}else{
 			if(j != this.getProprietaire()){
 				int tmpLoyer = this.loyer; //implémenter calcul de plusieurs gares
+				tmpLoyer = (int) (tmpLoyer*(Math.pow(2, g.nbTerrainJoueur(j)))/2);
 				j.paye(tmpLoyer); 				
 				this.getProprietaire().recoit(tmpLoyer);
 			}
 		}
 	}
-	
-	
-	/*public int nombreGare(Joueur j){
-		int cpt;
-		Joueur index = this.getProprietaire();
 		
-		for(int i=5; i<36; i+=10){
-			if()
-		}
-	}*/
-	
-	
-	
-	
 
 }
