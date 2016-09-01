@@ -1,6 +1,6 @@
-package plateau;
+package monopoly.plateau;
 
-import gameplay.Joueur;
+import monopoly.gameplay.Joueur;
 
 public abstract class Case {
 	 protected String nom;

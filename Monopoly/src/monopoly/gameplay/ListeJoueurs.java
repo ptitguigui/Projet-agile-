@@ -1,4 +1,4 @@
-package gameplay;
+package monopoly.gameplay;
 
 import java.util.ArrayList;
 
