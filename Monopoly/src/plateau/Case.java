@@ -15,10 +15,6 @@ public class Case {
         return nom;
      }
 	
-	public int getNum(){
-		return numero;
-	}
-
 	public int getNumero() {
 		return numero;
 	}
