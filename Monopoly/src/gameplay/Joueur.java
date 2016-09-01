@@ -1,6 +1,8 @@
 package gameplay;
 import java.util.ArrayList;
 
+import plateau.Carte;
+import plateau.Paquet;
 import plateau.Terrain;
 
 public class Joueur{
@@ -52,6 +54,9 @@ public class Joueur{
     }
     public void caseDepart() {
     	credit += 10;
+    }
+    public Carte Piocher(Paquet p) {
+    	return p.piocher();
     }
     public void seDeplace(int D1, int D2){
     	//Condition sur la prison à ajouter.
