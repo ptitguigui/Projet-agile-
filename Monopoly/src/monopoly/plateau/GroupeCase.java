@@ -25,7 +25,7 @@ public class GroupeCase {
 		
 		return (nbTerrainJoueur(j)==lesCases.size());
 	}
-	public void ajouterCase(Terrain t){
+	public void ajouterCase(Case t){
 		lesCases.add(t);
 	}
 	public String getNom(){

@@ -1,13 +1,15 @@
 package monopoly.gameplay;
 import java.util.ArrayList;
 
+import monopoly.plateau.Case;
 import monopoly.plateau.Terrain;
+import monopoly.plateau.Gare;
 
 public class Joueur{
     String nom;
     int credit;
     int pos;
-    ArrayList<Terrain> achats;
+    ArrayList<Case> achats;
 
     public Joueur(String nom){
         this.nom=nom;
@@ -38,6 +40,14 @@ public class Joueur{
             achats.add(ct);
         }
     }
+    
+    public void acheter(Gare gare) {
+		if ( gare.aVendre() && credit>=gare.getPrix() ){
+            credit-=gare.getPrix();
+            gare.setProprietaire(this);
+            achats.add(gare);
+        }
+	}
 
     public boolean equals(Joueur j){
         return (nom.equals(j.nom) && credit==j.credit);
@@ -53,7 +63,6 @@ public class Joueur{
     public void caseDepart() {
     	credit += 10;
     }
-  
     public void seDeplace(int D1, int D2){
     	//Condition sur la prison à ajouter.
     	if(this.getPos()+D1+D2 <=39){
@@ -64,5 +73,6 @@ public class Joueur{
       	}
     	
     }
+
     
 }
