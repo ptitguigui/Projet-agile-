@@ -1,14 +1,12 @@
 package test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import gameplay.Joueur;
-import plateau.Compagnie;
-import plateau.Gare;
-import plateau.GroupeCase;
-import plateau.Terrain;
+import monopoly.gameplay.Joueur;
+import monopoly.plateau.Compagnie;
+import monopoly.plateau.GroupeCase;
 
 public class testCompagnie {
 	Joueur j1;

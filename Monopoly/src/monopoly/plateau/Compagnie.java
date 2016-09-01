@@ -5,7 +5,7 @@ import java.util.Scanner;
 import monopoly.gameplay.Joueur;
 
 
-public class Compagnie extends Terrain{
+public class Compagnie extends Case{
 	GroupeCase g;
 	public Compagnie(String nom, int num, int p, int l, Joueur j,GroupeCase g) {
 		super(nom, num, p, l, j);	
