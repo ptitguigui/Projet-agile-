@@ -10,12 +10,13 @@ public class Joueur{
     String nom;
     int credit;
     int pos;
-    ArrayList<Case> achats;
+    ArrayList<Case> achats = null;
 
     public Joueur(String nom){
         this.nom=nom;
         credit=20000;
         pos=0;
+        achats = new ArrayList<>();
     }
 
     public String getNom(){
