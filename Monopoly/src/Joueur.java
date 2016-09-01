@@ -7,7 +7,7 @@ public class Joueur{
     public Joueur(String nom){
         this.nom=nom;
         credit=20000;
-        pos=-1;
+        pos=0;
     }
 
     public String getNom(){
@@ -43,5 +43,9 @@ public class Joueur{
 
     public void recoit(int loyer){
         credit+=loyer;
+    }
+    
+    public void seDeplace(int D1, int D2){
+    	this.setPos(D1+D2);
     }
 }
