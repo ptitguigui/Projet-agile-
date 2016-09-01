@@ -4,14 +4,20 @@ import java.util.Scanner;
 
 import gameplay.Joueur;
 
-public class Gare extends Terrain {
+public class Gare extends Case {
 
-	GroupeCase g;	
+	GroupeCase g;
+	protected int prix;
+    protected int loyer;
+    protected Joueur proprio;
 	public Gare(String nom,int num,int p, int l, Joueur j,GroupeCase g) {
-		super(nom,num,p,l,j);
+		super(nom,num);
+		 prix=p;
+	     loyer=l;
+	     proprio=j;
 		this.g = g;
 	}
-
+	
 	public void action(Joueur j) {
 		if(this.aVendre()){
 
@@ -39,8 +45,22 @@ public class Gare extends Terrain {
 	}
 	
 	public int calculerLoyer(Joueur j){
-		return (int) (this.loyer*(Math.pow(2, g.nbTerrainJoueur(j)))/2);
+		return (int) (this.loyer*((Math.pow(2, g.nbTerrainJoueur(j)))/2));
 	}
-		
+	public int getPrix(){
+        return (prix);
+	}
+
+	public Joueur getProprietaire(){
+		return (proprio);
+	}
+
+	public void setProprietaire(Joueur j){
+		proprio=j;
+	}	
+
+	public boolean aVendre(){
+		return (proprio==null);
+	}
 
 }

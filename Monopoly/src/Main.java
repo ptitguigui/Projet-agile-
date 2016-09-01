@@ -10,6 +10,7 @@ import plateau.Plateau;
 public class Main {
 	public static void main(String[] args) {
 		
+		//initialisation
 		Plateau jeu = new Plateau();
 		ListeJoueurs listeJoueurs = new ListeJoueurs();
 		Des D = new Des();

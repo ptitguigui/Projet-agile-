@@ -30,7 +30,7 @@ public class GareTest {
 		assertEquals(200,gare.getPrix());
 		assertEquals("g1",gare.getNom());
 		assertEquals(1,gare.getNumero());
-		assertEquals(25,gare.calculerLoyer());
+		assertEquals(25,gare.calculerLoyer(j1));
 	}
 	
 	
