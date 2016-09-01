@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
-import gameplay.Dés;
+import gameplay.Des;
 import gameplay.Joueur;
 import gameplay.ListeJoueurs;
 import plateau.Plateau;
@@ -12,7 +12,7 @@ public class Main {
 		
 		Plateau jeu = new Plateau();
 		ListeJoueurs listeJoueurs = new ListeJoueurs();
-		Dés D = new Dés();
+		Des D = new Des();
 		System.out.println("Bienvenue dans Monopoly !\nCombien de joueur y a-t-il ?");
 		Scanner in = new Scanner(System.in);
 		int nbJR = in.nextInt();
