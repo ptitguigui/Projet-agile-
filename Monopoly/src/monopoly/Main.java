@@ -84,14 +84,10 @@ public class Main {
 			
 			//Choix des actions
 			System.out.println("Que voulez-vous faire?");
-
-			
 			System.out.println("1.Piocher une carte");
-			
 			System.out.println("2. Construire une maison");
 			System.out.println("3. Hypothéquer");
 			System.out.println("4. Echanger");
-			
 			System.out.println("5. Passez votre tour");
 			Scanner in2= new Scanner(System.in);
 		 choix = in2.nextInt();
