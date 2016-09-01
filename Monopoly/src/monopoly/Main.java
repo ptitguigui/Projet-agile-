@@ -10,6 +10,8 @@ import monopoly.plateau.Carte;
 import monopoly.plateau.Paquet;
 import monopoly.plateau.Plateau;
 
+
+
 public class Main {
 	
 	public static void main(String[] args) {
@@ -18,7 +20,7 @@ public class Main {
 		
 		//Initialisation Paquets
 		Carte[] ch = { new Carte("Chance1"), new Carte("Chance2"), new Carte("Chance3"), new Carte("Chance4")};
-		Carte[] com = { new Carte("Communaute1"), new Carte("Communaute2"), new Carte("Communaute3"), new Carte("Communaute4")};
+		Carte[] com ={ new Carte("Communaute1"), new Carte("Communaute2"), new Carte("Communaute3"), new Carte("Communaute4")};
 		Paquet chance = new Paquet("Chance");
 		Paquet communaute = new Paquet ("Communauté");
 		
@@ -75,8 +77,14 @@ public class Main {
 			
 			//Choix des actions
 			System.out.println("Que voulez-vous faire?");
+
 			
 			System.out.println("1.Piocher une carte");
+
+			System.out.println("1. Construire une maison");
+			System.out.println("2. Hypothéquer");
+			System.out.println("3. Echanger");
+			
 			System.out.println("4. Passez votre tour");
 			Scanner in2= new Scanner(System.in);
 			int choix = in2.nextInt();

@@ -14,6 +14,7 @@ public class Gare extends Terrain {
 
 	public void action(Joueur j) {
 		if(this.aVendre()){
+
 			boolean done = false;
 			while(!done){
 				System.out.println("Voulez-vous acheter cette gare pour le prix de "+this.getPrix()+ "?\n 1.Oui\t2.Non");
@@ -35,6 +36,7 @@ public class Gare extends Terrain {
 				this.getProprietaire().recoit(tmpLoyer);
 			}
 		}
+
 	}
 	
 	public int calculerLoyer(Joueur j){
