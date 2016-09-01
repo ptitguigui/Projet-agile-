@@ -13,6 +13,10 @@ public class Case {
 	public String getNom(){
         return nom;
      }
+	
+	public int getNum(){
+		return numero;
+	}
 
 	public String toString() {
 		return "Case [nom=" + nom + ", numero=" + numero + "]";
