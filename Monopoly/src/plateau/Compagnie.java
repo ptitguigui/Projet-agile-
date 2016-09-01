@@ -10,5 +10,9 @@ public class Compagnie extends Terrain{
 	public int calculloyer (){
 		return 0;
 	}
+	public void action(Joueur j) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

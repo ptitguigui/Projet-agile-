@@ -1,7 +1,7 @@
 package plateau;
 import gameplay.Joueur;
 
-public abstract class Terrain extends Case{
+public class Terrain extends Case{
 		protected int prix;
 	    protected int loyer;
 	    protected Joueur proprio;
@@ -37,7 +37,6 @@ public abstract class Terrain extends Case{
 	    }
 
 		
-		public abstract void action(Joueur j);
 	    
 	  
 }
