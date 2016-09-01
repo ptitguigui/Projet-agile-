@@ -16,8 +16,7 @@ public class GroupeCase {
 		for(int i=0; i<lesCases.size(); i++){
 			if(((Terrain)(lesCases.get(i))).getProprietaire()==j){
 				cpt++;
-			}
-			
+			}		
 		}
 		return cpt;
 		
