@@ -26,6 +26,7 @@ public class Case {
 	public String toString() {
 		return "Case [nom=" + nom + ", numero=" + numero + "]";
 	}
+<<<<<<< HEAD
 	
 	//Actions en fonction du numéro de la case ou du type de case
 	//public void actions(Joueur j) {
@@ -34,4 +35,7 @@ public class Case {
 		//}
 	//}
 	
+=======
+
+>>>>>>> 9734e9bc3f94171101749755f515f1493a1b54b5
 }

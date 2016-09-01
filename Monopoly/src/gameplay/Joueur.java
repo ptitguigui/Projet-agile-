@@ -55,6 +55,12 @@ public class Joueur{
     }
     public void seDeplace(int D1, int D2){
     	//Condition sur la prison à ajouter.
-    	this.setPos(D1+D2);
+    	if(this.getPos()+D1+D2 <=39){
+    		this.setPos(this.getPos()+D1+D2);    		
+    	}else{
+    		int nb = this.getPos()+D1+D2;
+    		this.setPos(nb-40);
+    		
+    	}
     }
 }

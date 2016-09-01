@@ -13,6 +13,7 @@ public class Dés {
 		d2 = r.nextInt(5)+1;
 		estDouble();
 		tripleDouble();
+		System.out.println("Le joueur lance les dés et obient "+this.getD1() + " et "+ this.getD2());
 	}
 	
 	public int getD1(){
