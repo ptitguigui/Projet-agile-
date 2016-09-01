@@ -1,5 +1,4 @@
 package plateau;
-import gameplay.Joueur;
 
 public class Case {
 	 protected String nom;

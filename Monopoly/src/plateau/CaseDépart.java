@@ -9,13 +9,10 @@ public class CaseDépart extends Case {
 		
 	}
 
-	public void action(Joueur j) {
-		
-		
-	}
-	
-	
-	
-	
+//Méthode à appeller dans Evenement
+public void EvenementCaseDepart(Joueur j) {
 
+	j.recoit(10);
+	
+	}
 }
