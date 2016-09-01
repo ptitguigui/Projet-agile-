@@ -13,4 +13,9 @@ public class Case {
         return nom;
      }
 
+	@Override
+	public String toString() {
+		return "Case [nom=" + nom + ", numero=" + numero + "]";
+	}
+
 }

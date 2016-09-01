@@ -35,5 +35,6 @@ public class Terrain extends Case{
 	    public int calculerLoyer(){
 	        return (loyer);
 	    }
-
+	    
+	  
 }

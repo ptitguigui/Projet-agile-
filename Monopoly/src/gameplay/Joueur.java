@@ -1,10 +1,13 @@
 package gameplay;
+import java.util.ArrayList;
+
 import plateau.Terrain;
 
 public class Joueur{
     String nom;
     int credit;
     int pos;
+    ArrayList<Terrain> achats;
 
     public Joueur(String nom){
         this.nom=nom;
@@ -32,6 +35,7 @@ public class Joueur{
         if ( ct.aVendre() && credit>=ct.getPrix() ){
             credit-=ct.getPrix();
             ct.setProprietaire(this);
+            achats.add(ct);
         }
     }
 
