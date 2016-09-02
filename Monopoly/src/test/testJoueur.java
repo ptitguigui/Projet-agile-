@@ -23,7 +23,7 @@ public class testJoueur {
 		Joueur j1= new Joueur("jean");
 		j1.setPos(5);
 		assertEquals(j1.getPos(), 5);
-		assertEquals(j1.getCredit(), 20000);
+		assertEquals(j1.getCredit(), 1500);
 		
 	}
 	//@Test
@@ -39,9 +39,9 @@ public class testJoueur {
 	public void test3(){
 		Joueur j=new Joueur("barry");
 		j.paye(20);
-		assertEquals(j.getCredit(), 20000-20);
+		assertEquals(j.getCredit(), 1500-20);
 		j.recoit(20);
-		assertEquals(j.getCredit(), 20000);
+		assertEquals(j.getCredit(), 1500);
 		j.seDeplace(4, 6);
 		assertEquals(j.getPos(), 10);
 		
@@ -63,6 +63,8 @@ public class testJoueur {
 		Terrain rue2=new Terrain("rerer", 100, 5, 100, 200, 300, 400, 500, 600, 100, null);
 		ArrayList<Terrain> terrain = new ArrayList<Terrain>();
 		terrain.add(rue);
+		p.addCase(rue);
+		p.addCase(rue2);
 		assertEquals(terrain, p.terrainsPossedes(j));
 	}
 }
