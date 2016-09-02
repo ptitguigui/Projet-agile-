@@ -23,12 +23,12 @@ public class Main {
 		Carte[] ch = {
 		new Carte("Amende pour exces de vitesse payez 1000",1000),
 		new Carte("La banque vous verse 5000",5000),
-		new Carte("Impose pour les reparations de voirie, payez 4000/maison et 11500/hotel",(4000*nbMaisonJoueur)+(11500*nbHotelJoueur)),
+		//new Carte("Impose pour les reparations de voirie, payez 4000/maison et 11500/hotel",(4000*nbMaisonJoueur)+(11500*nbHotelJoueur)),
 		new Carte("Avancez jusqu'a la case depart",20000),
 		new Carte("Avancez jusqu'a Rue de la Paix",0),
 		new Carte("Carte sortie de Prison",0),
 		new Carte("Avancez jusqu'a l'avenue Henri Martin",0),
-		new Carte("Faites des reparations dans vos habitations, payez 2500/maison et 10000/hotel",(2500*nbMaison)+(10000*nbHotel)),
+		//new Carte("Faites des reparations dans vos habitations, payez 2500/maison et 10000/hotel",(-2500*nbMaison)+(10000*nbHotel)),
 		new Carte("Avancez au Boulevard de la Villette",0),
 		new Carte("Allez a la Gare de Lyon",0),
 		new Carte("Votre immeuble et votre pret rapporte, recevez 15000",15000),
@@ -47,7 +47,7 @@ public class Main {
 		new Carte("Retournez a Belleville",0),
 		new Carte("Allez en prison",0),
 		new Carte("Avancez jusqu'a la case Depart",0),
-		new Carte("C'est votre anniversaire ! Vous recevez 2000/joueurs",2000*nbJoueurs),
+		//new Carte("C'est votre anniversaire ! Vous recevez 2000/joueurs",2000*nbJoueurs),
 		new Carte("Recevez 10000",10000),
 		new Carte("Payez 1000 ou tirez une carte Chance",0),
 		new Carte("Erreur de la Banque en votre faveur, recevez 20000 ",20000),
@@ -105,7 +105,7 @@ public class Main {
 			}
 
 			// Case Départ
-			if (pos1Joueur <= j.getPos()) {// !listeJoueurs.getJoueur().enPrison()
+			if (pos1Joueur > j.getPos()) {// !listeJoueurs.getJoueur().enPrison()
 				System.out.println("Vous êtes passé par la case départ !");
 				j.caseDepart();
 			}
