@@ -52,11 +52,20 @@ public class Plateau {
 		this.plateau.add(new Terrain("Rue de la Paix",39,400, 0, 0, 0, 0, 0, 0, 0, null));
 		
 	}
+	
+	public Plateau (boolean f) {
+		this.plateau = new ArrayList<>();
+	}
+	
 	public void parcourirPlateau(){
 		
 		for (int i = 0; i <plateau.size(); i++) {
 			System.out.println(plateau.get(i).toString());
 		}
+	}
+	
+	public void addCase(Case j) {
+		plateau.add(j);
 	}
 	
 	public Case getCase(int i) {
@@ -132,12 +141,35 @@ public class Plateau {
 		return plateau;
 	}
 	
+	public ArrayList<Terrain> getTerrain() {
+		ArrayList<Terrain> terrain = new ArrayList<Terrain>();
+		for (Case i : plateau) {
+			if (i instanceof Terrain) {
+				Terrain j = (Terrain) i; 
+				terrain.add(j);
+			}
+		}
+		return terrain;
+	}
+	
 	public void parcourirTerrain() {
 		for (int i = 0; i < plateau.size(); i++) {
 			if (plateau.get(i) instanceof Terrain) {
 				System.out.println(i+" "+plateau.get(i).toString());
 			}
 		}
+	}
+	
+	
+	public ArrayList<Terrain> terrainsPossedes(Joueur j) {
+		ArrayList<Terrain> list = new ArrayList<Terrain>();
+		for (Terrain t : this.getTerrain()) {
+			if (t.estPossedee(j)) {
+				list.add(t);
+			}
+		}
+		
+		return list;
 	}
 
 }

@@ -37,6 +37,13 @@ public class Terrain extends Case{
 	    public void setProprietaire(Joueur j){
 	        proprio=j;
 	    }
+	    
+	    public boolean estPossedee(Joueur j) {
+	    	if (this.proprio==j) {return true;
+	    	}
+	    	
+	    	else {return (false);} 
+	    }
 
 	    public boolean aVendre(){
 	        return (proprio==null);
