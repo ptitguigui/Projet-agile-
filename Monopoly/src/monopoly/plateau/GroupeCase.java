@@ -18,8 +18,25 @@ public class GroupeCase {
 				cpt++;
 			}		
 		}
-		return cpt;
-		
+		return cpt;	
+	}
+	public int nbTerrainJoueurGare(Joueur j){
+		int cpt=0;
+		for(int i=0; i<lesCases.size(); i++){
+			if(((Gare)(lesCases.get(i))).getProprietaire()==j){
+				cpt++;
+			}		
+		}
+		return cpt;	
+	}
+	public int nbTerrainJoueurCompagnie(Joueur j){
+		int cpt=0;
+		for(int i=0; i<lesCases.size(); i++){
+			if(((Compagnie)(lesCases.get(i))).getProprietaire()==j){
+				cpt++;
+			}		
+		}
+		return cpt;	
 	}
 	public boolean seulproprio(Joueur j){
 		

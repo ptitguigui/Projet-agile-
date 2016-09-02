@@ -45,7 +45,7 @@ public class Gare extends Case {
 	}
 	
 	public int calculerLoyer(Joueur j){
-		return (int) (this.loyer*((Math.pow(2, g.nbTerrainJoueur(j)))/2));
+		return (int) (this.loyer*((Math.pow(2, g.nbTerrainJoueurGare(j)))/2));
 	}
 	public int getPrix(){
         return (prix);

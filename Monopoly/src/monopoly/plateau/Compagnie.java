@@ -48,7 +48,7 @@ public class Compagnie extends Case{
 	
 	public int calculerLoyer(Joueur j, int d1,int d2){
 	int loyer=0;
-		if(g.nbTerrainJoueur(j)==2){
+		if(g.nbTerrainJoueurCompagnie(j)==2){
 		loyer=(d1+d2)*10;
 	}else{
 			loyer=(d1+d2)*4;
