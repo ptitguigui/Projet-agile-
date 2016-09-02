@@ -14,7 +14,7 @@ public class TestCaseDepart {
 		
 		Joueur j = new Joueur("Kevin");
 		j.caseDepart();
-		assertEquals(20010,j.getCredit());
+		assertEquals(1510,j.getCredit());
 		
 	}
 
