@@ -10,14 +10,23 @@ public class Plateau {
 	
 	public Plateau() {	
 		this.plateau = new ArrayList<>();
-		this.plateau.add(new Terrain("Case départ", 0, 0, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new CaseDepart("Case départ", 0));
+		this.plateau.add(new Terrain("Boulevard de Belleville", 1, 200, 0, 0, 0, 100, 200, 300, 400, new Joueur("S")));
+		this.plateau.add(new CaseCommunaute("Caisse Comunauté", 2));
+		this.plateau.add(new Terrain("Rue Lecourbe", 3, 60, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Terrain("Boulevard de Belleville", 1, 200, 2, 10, 30, 90, 160, 250, 50, null));
 		this.plateau.add(new CaseCommunaute("Caisse Comunauté", 2));
 		this.plateau.add(new Terrain("Rue Lecourbe", 3, 60, 4, 20, 60, 180, 320, 450, 50, null));
-		this.plateau.add(new Terrain("Impôt sur le revenu", 4, 0, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new CaseTaxe("Impôt sur le revenu", 4));
 		this.plateau.add(new Gare("Gare Montparnasse", 5, 200, 0, null, null));
 		this.plateau.add(new Terrain("Rue Vaugirard", 6, 100, 6, 30, 90, 270, 400, 550, 50, null));
+<<<<<<< HEAD
 		this.plateau.add(new CaseChance("Chance", 7));
+=======
+		this.plateau.add(new Terrain("Chance", 7, 0, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new Terrain("Rue de Courcelles", 8, 100, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new Terrain("Avenue de la République", 9, 120, 0, 0, 0, 0, 0, 0, 0, null));
+>>>>>>> 14945f4b3846149305b2dd5e879815685b90c910
 		this.plateau.add(new Terrain("Rue de Courcelles", 8, 100, 6, 30, 90, 270, 400, 550, 50, null));
 		this.plateau.add(new Terrain("Avenue de la République", 9, 120, 8, 40, 100, 300, 450, 600, 50, null));
 		this.plateau.add(new Terrain("Prison / Simple visite",  10, 0, 0, 0, 0, 0, 0, 0, 0, null));
@@ -26,11 +35,20 @@ public class Plateau {
 		this.plateau.add(new Terrain("Avenue de Neuilly",  13, 140, 10, 50, 150, 450, 625, 750, 100, null));
 		this.plateau.add(new Terrain("Rue du Paradis",  14, 160, 12, 60, 180, 500, 700, 900, 100, null));
 		this.plateau.add(new Gare("Gare de Lyon",  15, 200, 0,null,null));
+		this.plateau.add(new Terrain("Avenue Mozart",  16, 180, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new CaseCommunaute("Caisse de Communaute",17));
+		this.plateau.add(new Terrain("Boulevard Saint Michel",  18, 180, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new Terrain("Place Pigalle",  19, 200, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new Terrain("Parc Gratuit",  20, 0, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new Terrain("Avenue Matignon",  21, 220, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new CaseChance("Chance",22));
+		this.plateau.add(new Terrain("Boulevard Malesherbes",23, 220, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new Terrain("Avenue Henri Martin",  24, 240, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Terrain("Avenue Mozart",  16, 180, 14, 70, 200, 550, 750, 950, 100, null));
 		this.plateau.add(new CaseCommunaute("Caisse de Communaute",  17));
 		this.plateau.add(new Terrain("Boulevard Saint Michel",  18, 180, 14, 70, 200, 550, 750, 950, 100, null));
 		this.plateau.add(new Terrain("Place Pigalle",  19, 200, 16, 80, 220, 600, 800, 1000, 100, null));
-		this.plateau.add(new Terrain("Parc Gratuit",  20, 0, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new CaseParc("Parc Gratuit",20));
 		this.plateau.add(new Terrain("Avenue Matignon",  21, 220, 18, 90, 250, 700, 875, 1050, 150, null));
 		this.plateau.add(new CaseChance("Chance",22));
 		this.plateau.add(new Terrain("Boulevard Malesherbes",23, 220, 18, 90, 250, 700, 875, 1050, 150, null));
@@ -41,6 +59,13 @@ public class Plateau {
 		this.plateau.add(new Compagnie("Compagnie des Eaux",28, 150, 0, null, null));
 		this.plateau.add(new Terrain("Rue la Fayette",29, 280, 24, 120, 360, 850, 1025, 1200, 1200, null));
 		this.plateau.add(new Terrain("Allez en prison",30, 0, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new Terrain("Avenue de Breteuil",31, 300, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new Terrain("Avenue Foch",32, 300, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new CaseCommunaute("Caisse de Communaute",33));
+		this.plateau.add(new Terrain("Boulevard des Capucines",34,320, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new Gare("Gare Saint Lazare",35, 200, 0,null,null));
+		this.plateau.add(new CaseChance("Chance",36));
+		this.plateau.add(new Terrain("Avenue des Champs-Elysees",37,350, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Terrain("Avenue de Breteuil",31, 300, 26, 130, 390, 900, 1100, 1275, 200, null));
 		this.plateau.add(new Terrain("Avenue Foch",32, 300, 26, 130, 390, 900, 1100, 1275, 200, null));
 		this.plateau.add(new CaseCommunaute("Caisse de Communaute",33));
@@ -48,7 +73,7 @@ public class Plateau {
 		this.plateau.add(new Gare("Gare Saint Lazare",35, 200, 0,null,null));
 		this.plateau.add(new CaseChance("Chance",36));
 		this.plateau.add(new Terrain("Avenue des Champs-Elysees",37,350, 35, 175, 500, 1100, 1300, 1500, 200, null));
-		this.plateau.add(new Terrain("Taxe de Luxe",38, 100, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new CaseTaxe("Taxe de Luxe",38));
 		this.plateau.add(new Terrain("Rue de la Paix",39,400, 50, 200, 600, 1400, 1700, 2000, 200, null));
 	}		
 	
@@ -74,60 +99,98 @@ public class Plateau {
 	public void afficherPlateau(Joueur courant) {
 		
 		int posJoueur = courant.getPos();
-		System.out.println("pos Joueur est"+posJoueur);
-		System.out.println(posJoueur+12);
-		System.out.println(posJoueur-6);
+		int posliste =0;
+	
+		System.out.println("                   >");
 		
 		 
 		
 		for (int i=posJoueur-6; i<posJoueur+12; i++) {
-			if(plateau.get(i).numero == posJoueur) {
-				System.out.print("-X-");
+			posliste = i;
+			if (i < 0) {
+				posliste = i+39;
 			}
-			if (plateau.get(i) instanceof Gare) {
+			if (i > 39) {
+				posliste =i-39; 
+			}
+		
+			if (plateau.get(posliste) instanceof Gare) {
 				System.out.print("-G-");
 			}
-			else if (plateau.get(i) instanceof Terrain) {
+			else if (plateau.get(posliste) instanceof Terrain) {
 				System.out.print("-T-");
 			}
-			else if (plateau.get(i) instanceof Compagnie) {
-				System.out.println("-C-");
+			else if (plateau.get(posliste) instanceof Compagnie) {
+				System.out.print("-C-");
+			} else if (plateau.get(posliste) instanceof CaseChance ) {
+				System.out.print("-?-");
+			}
+			else if (plateau.get(posliste) instanceof CaseCommunaute ) {
+				System.out.print("-!-");
+			}
+			else if (plateau.get(posliste) instanceof CaseTaxe) {
+				System.out.print("-$-");
+			}
+			else if (plateau.get(posliste) instanceof CaseParc) {
+				System.out.print("-*-");
+			}
+			else if (plateau.get(posliste) instanceof CaseParc) {
+				System.out.print("-D-");
 			}
 			
 		}
+		
 		System.out.println();
 		
 		for (int i=posJoueur-6; i<posJoueur+12; i++) {
-			if (plateau.get(i) instanceof Gare) {
+			posliste=i;
+			if (i <0) {
+				posliste=i+39;
+			}
+			if (i>39) {
+				posliste =i-39; 
+			}
+			
+			if (plateau.get(posliste) instanceof Gare) {
 				
 				Gare tmp = (Gare) plateau.get(i);
 				if (tmp.proprio == courant) {
-					System.out.print("v");
+					System.out.print(" v ");
 				} else if (plateau.contains(tmp.proprio)) {
-					System.out.print("x");
+					System.out.print(" x ");
+				}
+				else {
+					System.out.print("   ");
 				}
 				
 			}
-			else if (plateau.get(i) instanceof Terrain) {
+			else if (plateau.get(posliste) instanceof Terrain) {
 				
 				Terrain tmp = (Terrain) plateau.get(i);
 				if (tmp.proprio == courant) {
-					System.out.print("v");
+					System.out.print(" v ");
 				} else if (plateau.contains(tmp.proprio)) {
-					System.out.print("x");
+					System.out.print(" x ");
+				}
+				else {
+					System.out.print("   ");
 				}
 				
 			}
-			else if (plateau.get(i) instanceof Compagnie) {
+			else if (plateau.get(posliste) instanceof Compagnie) {
 				Compagnie tmp = (Compagnie) plateau.get(i);
 				if (tmp.proprio == courant) {
-					System.out.print("v");
+					System.out.print(" v ");
 				} else if (plateau.contains(tmp.proprio)) {
-					System.out.print("x");
+					System.out.print(" x ");
+				}
+					else {
+						System.out.print("   ");
+					}
 				}
 			}
 			
-		}
+		System.out.println();
 		
 	}
 	
