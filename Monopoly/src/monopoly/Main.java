@@ -20,11 +20,7 @@ public class Main {
 		
 		//initialisation des paquets
 		
-		Paquet chance = new Paquet("chance");
-		Paquet communaute = new Paquet("communaute");
-		
-		chance.initChance();
-		communaute.initCommunaute();	
+			
 		
 
 		ListeJoueurs listeJoueurs = new ListeJoueurs();
@@ -67,7 +63,7 @@ public class Main {
 			}
 
 			// Case Départ
-			if (pos1Joueur <= j.getPos() && !listeJoueurs.getJoueur().isEnPrison()) {// !listeJoueurs.getJoueur().enPrison()
+			if (pos1Joueur <= j.getPos()) {// !listeJoueurs.getJoueur().enPrison()
 				System.out.println("Vous êtes passé par la case départ !");
 				j.caseDepart();
 			}
