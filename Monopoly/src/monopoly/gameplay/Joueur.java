@@ -74,23 +74,7 @@ public class Joueur{
     	//Condition sur la prison à ajouter.
     	Des D = new Des();
     	if(enPrison){
-    		System.out.println("Que voulez-vous faire ?\n1.Tenter de faire un double\t2.Payer 50€");
-    		Scanner in = new Scanner(System.in);
-    		int choix = in.nextInt();
-    		if(choix == 1){
-    			D.roll();
-    			if(D.estDouble()){
-    				if(this.getPos()+D1+D2 <=39){
-    		    		this.setPos(this.getPos()+D1+D2);    		
-    		    	}else{
-    		    		int nb = this.getPos()+D1+D2;
-    		    		this.setPos(nb-40);
-    		      	}
-    			}else if(nbToursPrison>=3){
-    				System.out.println("Vous sortez de prison et êtes débité de 50€");
-    				this.credit = this.getCredit()-50;
-    			}
-    		}
+    		deroulementPrison(D1, D2, D);
     	}
     	if(this.getPos()+D1+D2 == 30 || D.tripleDouble()){
     		System.out.println("Allez en prison. Déplacement vers la case 10");
@@ -105,6 +89,45 @@ public class Joueur{
       	}
     	
     }
+
+	private int deroulementPrison(int D1, int D2, Des D) {
+		System.out.println("Que voulez-vous faire ?\n1.Tenter de faire un double\t2.Payer 50€");
+		Scanner in = new Scanner(System.in);
+		int choix = in.nextInt();
+		if(choix == 1){
+			D.roll();
+			if(D.estDouble()){
+				enPrison = false;
+				nbToursPrison=0;
+				if(this.getPos()+D1+D2 <=39){
+		    		this.setPos(this.getPos()+D1+D2);    		
+		    	}else{
+		    		int nb = this.getPos()+D1+D2;
+		    		this.setPos(nb-40);
+		      	}
+				return 0;
+			}else if(nbToursPrison>=3){
+				System.out.println("Vous sortez de prison et êtes débité de 50€");
+				this.credit = this.getCredit()-50;
+				enPrison = false;
+				nbToursPrison=0;
+				return 0;
+			}else{
+				nbToursPrison++;
+				System.out.println("Vous restez en prison.");
+				return 0;
+			}
+		}else if(choix == 2){
+			System.out.println("Vous payez 50€");
+			this.credit = this.getCredit()-50;
+			enPrison = false;
+			nbToursPrison=0;
+			return 0;
+		}else{
+			System.out.println("Vous ne pouvez pas faire ca.");
+			return deroulementPrison(D1, D2, D);
+		}
+	}
 
     
 }
