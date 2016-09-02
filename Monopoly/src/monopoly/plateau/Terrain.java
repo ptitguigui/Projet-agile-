@@ -69,12 +69,14 @@ public class Terrain extends Case{
 
 		@Override
 		public void action(Joueur j) {
+			if (loyers.get(0)==0) {
 			if(this.aVendre()){
 				terrainAVendre(j);
 			}else if(this.getProprietaire() == j){
 				System.out.println("Ceci est votre propriétée, bon séjour.");
 			}else if(this.getProprietaire() != j){
 				j.paye(this.calculerLoyer());
+			}
 			}
 		}
 
