@@ -7,7 +7,6 @@ import javax.swing.JOptionPane;
 import monopoly.gameplay.Des;
 import monopoly.gameplay.Joueur;
 import monopoly.gameplay.ListeJoueurs;
-import monopoly.plateau.Carte;
 import monopoly.plateau.Paquet;
 import monopoly.plateau.Plateau;
 import monopoly.plateau.Terrain;
@@ -17,6 +16,18 @@ public class Main {
 	public static void main(String[] args) {
 
 		Plateau jeu = new Plateau();
+<<<<<<< HEAD
+		
+		//initialisation des paquets
+		
+		Paquet chance = new Paquet("chance");
+		Paquet communaute = new Paquet("communaute");
+		
+		chance.initChance();
+		communaute.initCommunaute();	
+		
+
+=======
 
 		// Initialisation Paquets
 
@@ -62,6 +73,7 @@ public class Main {
 		 * for (int i = 0; i < ch.length; i++) { chance.add(ch[i]);
 		 * communaute.add(com[i]); }
 		 **/
+>>>>>>> 54cf629c04726b335d3dba0d6f8da8815ad359cc
 
 		ListeJoueurs listeJoueurs = new ListeJoueurs();
 		Des D = new Des();
@@ -87,16 +99,22 @@ public class Main {
 			int pos1Joueur = j.getPos();
 			D.roll();
 			listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2());
+			jeu.declancheAction(listeJoueurs.getJoueur());
 			System.out.println(listeJoueurs.getJoueur().getNom() + " se déplace de " + (D.getD1() + D.getD2())
 					+ " cases et arrive sur la case " + listeJoueurs.getJoueur().getPos());
+<<<<<<< HEAD
+			System.out.println(j.getNom() + " se déplace de " + (D.getD1() + D.getD2())
+					+ " cases et arrive sur la case " + j.getPos());
+=======
 			jeu.declancheAction(listeJoueurs.getJoueur());
+>>>>>>> 54cf629c04726b335d3dba0d6f8da8815ad359cc
 
 			if (D.estDouble() && !D.tripleDouble()) {
 				D.roll();
 				listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2());
+				jeu.declancheAction(listeJoueurs.getJoueur());
 				System.out.println("C'est un Double !" + j.getNom() + " se déplace de " + (D.getD1() + D.getD2())
 						+ " cases et arrive sur la case " + j.getPos());
-				jeu.declancheAction(listeJoueurs.getJoueur());
 
 			} else if (D.estDouble()) {
 				D.roll();
@@ -104,12 +122,43 @@ public class Main {
 			}
 
 			// Case Départ
-			if (pos1Joueur > j.getPos()) {// !listeJoueurs.getJoueur().enPrison()
+			if (pos1Joueur <= j.getPos()) {// !listeJoueurs.getJoueur().enPrison()
 				System.out.println("Vous êtes passé par la case départ !");
 				j.caseDepart();
 			}
 
 			int choix = 0;
+<<<<<<< HEAD
+			while (choix != 4) {	
+			
+			//Choix des actions
+			System.out.println("Que voulez-vous faire?");
+			System.out.println("1.Piocher une carte");
+			System.out.println("2. Construire une maison");
+			System.out.println("3. Hypothéquer");
+			System.out.println("4. Echanger");
+			System.out.println("5. Passez votre tour");
+			Scanner in2= new Scanner(System.in);
+		 choix = in2.nextInt();
+			
+			//Réalisation des actions
+			if (choix==2) {
+				System.out.println("Voici la liste des Terrains");
+				jeu.parcourirTerrain();
+				System.out.println("Indiquez le numéro de la case sur lequel vous voulez construire");
+				Scanner in3 = new Scanner(System.in);
+				int choix2 = in3.nextInt();
+				Terrain t = (Terrain) jeu.getCase(choix2);
+				t.ajoutMaison(1);
+				System.out.println("Le nouveau loyer est de :" + t.calculerLoyer());
+			} else if (choix == 1) {
+				
+				System.out.println(j.getNom() + "a pioché :"+chance.piocher());
+				System.out.println(j.getNom()+"a pioché"+communaute.piocher());
+				
+			}else{
+			}
+=======
 			System.out.println("afficher plateau normalement");
 			jeu.afficherPlateau(j);
 			while (choix != 5) {
@@ -145,6 +194,7 @@ public class Main {
 
 				} else if (choix!=5){
 				
+>>>>>>> 54cf629c04726b335d3dba0d6f8da8815ad359cc
 				System.out.println("Vous ne pouvez pas faire ça");
 				}
 			}
