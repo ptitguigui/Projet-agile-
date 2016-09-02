@@ -35,6 +35,5 @@ public abstract class Case {
 		//}
 	//}
 	public abstract void action(Joueur j);
-	
 
 }
