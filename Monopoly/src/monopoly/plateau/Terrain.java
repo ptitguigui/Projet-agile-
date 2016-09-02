@@ -1,5 +1,6 @@
 package monopoly.plateau;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import monopoly.gameplay.Joueur;
 
@@ -68,8 +69,28 @@ public class Terrain extends Case{
 
 		@Override
 		public void action(Joueur j) {
-			// TODO Auto-generated method stub
-			
+			if(this.aVendre()){
+				terrainAVendre(j);
+			}else if(this.getProprietaire() == j){
+				System.out.println("Ceci est votre propriétée, bon séjour.");
+			}else if(this.getProprietaire() != j){
+				j.paye(this.calculerLoyer());
+			}
+		}
+
+		private int terrainAVendre(Joueur j) {
+			System.out.println("Souhaitez-vous acheter " + this.getNom()+" pour la somme de : " + this.getPrix() +" ?\nVous avez " + j.getCredit() + "€\n1.Oui\t2.Non");
+			@SuppressWarnings("resource")
+			Scanner in = new Scanner(System.in);
+			int choix = in.nextInt();
+			if(choix ==1){
+				j.acheter(this);
+				return 0;
+			}else if(choix != 2){
+				System.out.println("Vous ne pouvez pas faire ca");
+				return terrainAVendre(j);
+			}
+			return terrainAVendre(j);
 		}
 
 }

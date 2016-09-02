@@ -26,6 +26,7 @@ public class GareTest {
 	@Test
 	public void constructorTest(){
 		Gare gare = new Gare("g1",1,200,25,j1,groupe);
+		groupe.ajouterCase(gare);
 		assertEquals(j1,gare.getProprietaire());
 		assertEquals(200,gare.getPrix());
 		assertEquals("g1",gare.getNom());

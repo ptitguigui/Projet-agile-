@@ -25,6 +25,7 @@ public class Compagnie extends Case{
 			boolean done = false;
 			while(!done){
 				System.out.println("Voulez-vous acheter cette compagnie pour le prix de "+this.getPrix()+ "?\n 1.Oui\t2.Non");
+				@SuppressWarnings("resource")
 				Scanner in = new Scanner(System.in);
 				int choix = in.nextInt();
 				if(choix == 1){
@@ -48,7 +49,7 @@ public class Compagnie extends Case{
 	
 	public int calculerLoyer(Joueur j, int d1,int d2){
 	int loyer=0;
-		if(g.nbTerrainJoueur(j)==2){
+		if(g.nbTerrainJoueurCompagnie(j)==2){
 		loyer=(d1+d2)*10;
 	}else{
 			loyer=(d1+d2)*4;
