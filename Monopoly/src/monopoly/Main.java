@@ -67,7 +67,7 @@ public class Main {
 			}
 
 			// Case Départ
-			if (pos1Joueur <= j.getPos()) {// !listeJoueurs.getJoueur().enPrison()
+			if (pos1Joueur <= j.getPos() && !listeJoueurs.getJoueur().isEnPrison()) {// !listeJoueurs.getJoueur().enPrison()
 				System.out.println("Vous êtes passé par la case départ !");
 				j.caseDepart();
 			}
