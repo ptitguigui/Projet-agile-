@@ -115,7 +115,7 @@ public class Main {
 			while (choix != 5) {
 
 				// Choix des actions
-				System.out.println("Que voulez-vous faire?");
+				System.out.println("Que voulez-vous faire?");1
 				System.out.println("1.Piocher une carte");
 				System.out.println("2. Construire une maison");
 				System.out.println("3. Hypothéquer");

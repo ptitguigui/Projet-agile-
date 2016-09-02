@@ -80,8 +80,7 @@ public class Joueur{
     public void caseDepart() {
     	credit += 10;
     }
-    public void seDeplace(int D1, int D2){
-    	Des D = new Des();
+    public void seDeplace(int D1, int D2, Des D){
     	if(enPrison){
     		deroulementPrison(D1, D2, D);
     	}else if(this.getPos()+D1+D2 == 30 || D.tripleDouble()){
