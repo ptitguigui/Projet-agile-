@@ -37,6 +37,13 @@ public class Terrain extends Case{
 	    public void setProprietaire(Joueur j){
 	        proprio=j;
 	    }
+	    
+	    public boolean estPossedee(Joueur j) {
+	    	if (this.proprio==j) {return true;
+	    	}
+	    	
+	    	else {return (false);} 
+	    }
 
 	    public boolean aVendre(){
 	        return (proprio==null);
@@ -73,6 +80,7 @@ public class Terrain extends Case{
 
 		private int terrainAVendre(Joueur j) {
 			System.out.println("Souhaitez-vous acheter " + this.getNom()+" pour la somme de : " + this.getPrix() +" ?\nVous avez " + j.getCredit() + "€\n1.Oui\t2.Non");
+			@SuppressWarnings("resource")
 			Scanner in = new Scanner(System.in);
 			int choix = in.nextInt();
 			if(choix ==1){

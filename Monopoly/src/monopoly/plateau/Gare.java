@@ -24,6 +24,7 @@ public class Gare extends Case {
 			boolean done = false;
 			while(!done){
 				System.out.println("Voulez-vous acheter cette gare pour le prix de "+this.getPrix()+ "?\n 1.Oui\t2.Non");
+				@SuppressWarnings("resource")
 				Scanner in = new Scanner(System.in);
 				int choix = in.nextInt();
 				if(choix == 1){

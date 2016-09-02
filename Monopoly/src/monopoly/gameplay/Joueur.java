@@ -99,6 +99,7 @@ public class Joueur{
 
 	private int deroulementPrison(int D1, int D2, Des D) {
 		System.out.println("Que voulez-vous faire ?\n1.Tenter de faire un double\t2.Payer 50€");
+		@SuppressWarnings("resource")
 		Scanner in = new Scanner(System.in);
 		int choix = in.nextInt();
 		if(choix == 1){

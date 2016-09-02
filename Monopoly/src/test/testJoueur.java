@@ -1,11 +1,13 @@
 package test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
 
 import org.junit.Test;
 
 import monopoly.gameplay.Joueur;
-import monopoly.plateau.Compagnie;
+import monopoly.plateau.Plateau;
 import monopoly.plateau.Terrain;
 
 public class testJoueur {
@@ -45,5 +47,22 @@ public class testJoueur {
 		
 		
 	}
-
+	
+	@Test
+	public void estPossedee() {
+		Joueur j = new Joueur("S");
+		Terrain rue2=new Terrain("rerer", 100, 5, 100, 200, 300, 400, 500, 600, 100, j);
+		assertEquals(true, rue2.estPossedee(j));
+	}
+	
+	@Test
+	public void listeTerrainsPossedes() {
+		Plateau p = new Plateau(false);
+		Joueur j = new Joueur("S");
+		Terrain rue=new Terrain("rer", 100, 5, 100, 200, 300, 400, 500, 600, 100, j);
+		Terrain rue2=new Terrain("rerer", 100, 5, 100, 200, 300, 400, 500, 600, 100, null);
+		ArrayList<Terrain> terrain = new ArrayList<Terrain>();
+		terrain.add(rue);
+		assertEquals(terrain, p.terrainsPossedes(j));
+	}
 }
