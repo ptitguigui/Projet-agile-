@@ -1,5 +1,6 @@
 package monopoly.gameplay;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import monopoly.plateau.Case;
 import monopoly.plateau.Compagnie;
@@ -11,12 +12,16 @@ public class Joueur{
     int credit;
     int pos;
     ArrayList<Case> achats = null;
+    boolean enPrison;
+    int nbToursPrison;
 
     public Joueur(String nom){
         this.nom=nom;
-        credit=20000;
+        credit=1500;
         pos=0;
         achats = new ArrayList<>();
+        enPrison = false;
+        nbToursPrison = 0;
     }
 
     public String getNom(){
@@ -67,6 +72,31 @@ public class Joueur{
     }
     public void seDeplace(int D1, int D2){
     	//Condition sur la prison à ajouter.
+    	Des D = new Des();
+    	if(enPrison){
+    		System.out.println("Que voulez-vous faire ?\n1.Tenter de faire un double\t2.Payer 50€");
+    		Scanner in = new Scanner(System.in);
+    		int choix = in.nextInt();
+    		if(choix == 1){
+    			D.roll();
+    			if(D.estDouble()){
+    				if(this.getPos()+D1+D2 <=39){
+    		    		this.setPos(this.getPos()+D1+D2);    		
+    		    	}else{
+    		    		int nb = this.getPos()+D1+D2;
+    		    		this.setPos(nb-40);
+    		      	}
+    			}else if(nbToursPrison>=3){
+    				System.out.println("Vous sortez de prison et êtes débité de 50€");
+    				this.credit = this.getCredit()-50;
+    			}
+    		}
+    	}
+    	if(this.getPos()+D1+D2 == 30 || D.tripleDouble()){
+    		System.out.println("Allez en prison. Déplacement vers la case 10");
+    		this.setPos(10);
+    		enPrison = true;
+    	}
     	if(this.getPos()+D1+D2 <=39){
     		this.setPos(this.getPos()+D1+D2);    		
     	}else{

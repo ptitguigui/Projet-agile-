@@ -22,7 +22,7 @@ public class Plateau {
 		this.plateau.add(new Terrain("Avenue de la République", 9, 0, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Terrain("Prison / Simple visite",  10, 0, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Terrain("Boulevard de la Villette",  11, 140, 0, 0, 0, 0, 0, 0, 0, null));
-		this.plateau.add(new Terrain("Compagnie d'Electricite",  12, 150, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new Compagnie("Compagnie d'Electricite",  12, 150, 0, null, null));
 		this.plateau.add(new Terrain("Avenue de Neuilly",  13, 140, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Terrain("Rue du Paradis",  14, 160, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Gare("Gare de Lyon",  15, 200, 0,null,null));
@@ -38,7 +38,7 @@ public class Plateau {
 		this.plateau.add(new Gare("Gare du Nord",25, 200, 0,null,null));
 		this.plateau.add(new Terrain("Faubourg Saint Honore",26, 260, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Terrain("Place de la Bourse",27, 260, 0, 0, 0, 0, 0, 0, 0, null));
-		this.plateau.add(new Terrain("Compagnie des Eaux",28, 150, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new Compagnie("Compagnie des Eaux",28, 150, 0, null, null));
 		this.plateau.add(new Terrain("Rue la Fayette",29, 280, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Terrain("Allez en prison",30, 0, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Terrain("Avenue de Breteuil",31, 300, 0, 0, 0, 0, 0, 0, 0, null));
