@@ -19,7 +19,7 @@ public class Plateau {
 		this.plateau.add(new Terrain("Rue Vaugirard", 6, 100, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Terrain("Chance", 7, 0, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Terrain("Rue de Courcelles", 8, 100, 0, 0, 0, 0, 0, 0, 0, null));
-		this.plateau.add(new Terrain("Avenue de la République", 9, 0, 0, 0, 0, 0, 0, 0, 0, null));
+		this.plateau.add(new Terrain("Avenue de la République", 9, 120, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Terrain("Prison / Simple visite",  10, 0, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Terrain("Boulevard de la Villette",  11, 140, 0, 0, 0, 0, 0, 0, 0, null));
 		this.plateau.add(new Compagnie("Compagnie d'Electricite",  12, 150, 0, null, null));
@@ -75,60 +75,78 @@ public class Plateau {
 	public void afficherPlateau(Joueur courant) {
 		
 		int posJoueur = courant.getPos();
-		System.out.println("pos Joueur est"+posJoueur);
-		System.out.println(posJoueur+12);
-		System.out.println(posJoueur-6);
+		int posliste =0;
+	
+		System.out.println("                   >");
 		
 		 
 		
 		for (int i=posJoueur-6; i<posJoueur+12; i++) {
-			if(plateau.get(i).numero == posJoueur) {
-				System.out.print("-X-");
+			posliste = i;
+			if (i <0) {
+				posliste = i+38;
 			}
-			if (plateau.get(i) instanceof Gare) {
+		
+			if (plateau.get(posliste) instanceof Gare) {
 				System.out.print("-G-");
 			}
-			else if (plateau.get(i) instanceof Terrain) {
+			else if (plateau.get(posliste) instanceof Terrain) {
 				System.out.print("-T-");
 			}
-			else if (plateau.get(i) instanceof Compagnie) {
-				System.out.println("-C-");
+			else if (plateau.get(posliste) instanceof Compagnie) {
+				System.out.print("-C-");
 			}
 			
 		}
+		
 		System.out.println();
 		
 		for (int i=posJoueur-6; i<posJoueur+12; i++) {
-			if (plateau.get(i) instanceof Gare) {
+			posliste=i;
+			if (i <0) {
+				posliste=i+38;
+			}
+			
+			else if (plateau.get(posliste) instanceof Gare) {
 				
 				Gare tmp = (Gare) plateau.get(i);
 				if (tmp.proprio == courant) {
-					System.out.print("v");
+					System.out.print(" v ");
 				} else if (plateau.contains(tmp.proprio)) {
-					System.out.print("x");
+					System.out.print(" x ");
+				}
+				else {
+					System.out.print("   ");
 				}
 				
 			}
-			else if (plateau.get(i) instanceof Terrain) {
+			else if (plateau.get(posliste) instanceof Terrain) {
 				
 				Terrain tmp = (Terrain) plateau.get(i);
 				if (tmp.proprio == courant) {
-					System.out.print("v");
+					System.out.print(" v ");
 				} else if (plateau.contains(tmp.proprio)) {
-					System.out.print("x");
+					System.out.print(" x ");
+				}
+				else {
+					System.out.print("   ");
 				}
 				
 			}
-			else if (plateau.get(i) instanceof Compagnie) {
+			else if (plateau.get(posliste) instanceof Compagnie) {
 				Compagnie tmp = (Compagnie) plateau.get(i);
 				if (tmp.proprio == courant) {
-					System.out.print("v");
+					System.out.print(" v ");
 				} else if (plateau.contains(tmp.proprio)) {
-					System.out.print("x");
+					System.out.print(" x ");
+				}
+					else {
+						System.out.print("   ");
+					}
 				}
 			}
 			
-		}
+		System.out.println();
 		
 	}
 	
