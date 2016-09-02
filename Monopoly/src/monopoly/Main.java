@@ -62,7 +62,7 @@ public class Main {
 			}
 
 			// Case Départ
-			if (pos1Joueur <= j.getPos()) {// !listeJoueurs.getJoueur().enPrison()
+			if (pos1Joueur >= j.getPos()) {// !listeJoueurs.getJoueur().enPrison()
 				System.out.println("Vous êtes passé par la case départ !");
 				j.caseDepart();
 			}
@@ -80,6 +80,9 @@ public class Main {
 			
 			//Réalisation des actions
 			if (choix==1) {
+				if (jeu.terrainsPossedes(j).isEmpty()) {
+					System.out.println("Vous ne possédez pas de Terrain.");
+				} else {
 				System.out.println("Voici la liste des Terrains que vous possédez");
 				jeu.afficherTerrainPossedes(j);
 				System.out.println("Indiquez le numéro de la case sur lequel vous voulez construire");
@@ -88,7 +91,7 @@ public class Main {
 				Terrain t = (Terrain) jeu.getCase(choix2);
 				t.ajoutMaison(1);
 				System.out.println("Le nouveau loyer est de :" + t.calculerLoyer());
-							
+				}	
 			}else if(choix !=2){
 				System.out.println("Vous ne pouvez pas faire ça");
 			}
