@@ -14,7 +14,7 @@ public class CaseChance extends Case {
 		
 		chance.initChance();
 		
-		System.out.println(j.getNom() + "a pioché :"+chance.piocher());
+		System.out.println(j.getNom() + " a pioché :"+chance.piocher());
 		Carte carte = chance.piocher();
 		if(carte.getEffet()<0){
 			j.recoit(carte.getValeur());
