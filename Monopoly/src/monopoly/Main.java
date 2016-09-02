@@ -7,7 +7,6 @@ import javax.swing.JOptionPane;
 import monopoly.gameplay.Des;
 import monopoly.gameplay.Joueur;
 import monopoly.gameplay.ListeJoueurs;
-import monopoly.plateau.Carte;
 import monopoly.plateau.Paquet;
 import monopoly.plateau.Plateau;
 import monopoly.plateau.Terrain;
@@ -18,50 +17,15 @@ public class Main {
 
 		Plateau jeu = new Plateau();
 
-		// Initialisation Paquets
 		
-	/**	Carte[] ch = {
-		new Carte("Amende pour exces de vitesse payez 1000",1000),
-		new Carte("La banque vous verse 5000",5000),
-		//new Carte("Impose pour les reparations de voirie, payez 4000/maison et 11500/hotel",(4000*nbMaisonJoueur)+(11500*nbHotelJoueur)),
-		new Carte("Avancez jusqu'a la case depart",20000),
-		new Carte("Avancez jusqu'a Rue de la Paix",0),
-		new Carte("Carte sortie de Prison",0),
-		new Carte("Avancez jusqu'a l'avenue Henri Martin",0),
-		//new Carte("Faites des reparations dans vos habitations, payez 2500/maison et 10000/hotel",(-2500*nbMaison)+(10000*nbHotel)),
-		new Carte("Avancez au Boulevard de la Villette",0),
-		new Carte("Allez a la Gare de Lyon",0),
-		new Carte("Votre immeuble et votre pret rapporte, recevez 15000",15000),
-		new Carte("Allez en prison, ne passez pas par la case Depart",0),
-		new Carte("Reculez de 3 cases",0),
-		new Carte("Amende pour ivresse, payez 2000",-2000),
-		new Carte("Vous avez gagne le prix de mots croises, recevez 10000",10000)};
+		//initialisation des paquets
 		
+		Paquet chance = new Paquet("chance");
+		Paquet communaute = new Paquet("communaute");
 		
-		Carte[] com = {new Carte("Vous n'avez pas regler la police d'assurance, payez 5000",-5000)
-				,new Carte("Vous heritez de 10000",10000),
-		new Carte("Vous etes libere de prison",0),
-		new Carte("Frais medicaux, payez 5000",-5000),
-		new Carte("Vous gagnez le second prix de beaute, recevez 1000",1000),
-		new Carte("Les contributions vous remboursent, recevez 2000",2000),
-		new Carte("Retournez a Belleville",0),
-		new Carte("Allez en prison",0),
-		new Carte("Avancez jusqu'a la case Depart",0),
-		//new Carte("C'est votre anniversaire ! Vous recevez 2000/joueurs",2000*nbJoueurs),
-		new Carte("Recevez 10000",10000),
-		new Carte("Payez 1000 ou tirez une carte Chance",0),
-		new Carte("Erreur de la Banque en votre faveur, recevez 20000 ",20000),
-		new Carte("Vous vendez votre stock, recevez 5000",5000),
-		new Carte("Frais d'hopitaux, payez 10000",-10000)};
+		chance.initChance();
+		communaute.initCommunaute();	
 		
-		Paquet chance = new Paquet("Chance");
-		Paquet communaute = new Paquet("Communauté");
-
-		for (int i = 0; i < ch.length; i++) {
-			chance.add(ch[i]);
-			communaute.add(com[i]);
-		}
-**/
 
 		ListeJoueurs listeJoueurs = new ListeJoueurs();
 		Des D = new Des();
@@ -86,71 +50,64 @@ public class Main {
 			// Déplacement
 			int pos1Joueur = j.getPos();
 			D.roll();
-			listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2());
-			System.out.println(listeJoueurs.getJoueur().getNom() + " se déplace de " + (D.getD1() + D.getD2())
-					+ " cases et arrive sur la case " + listeJoueurs.getJoueur().getPos());
-			jeu.declancheAction(listeJoueurs.getJoueur());
+		
 
 
-			if (D.estDouble() && !D.tripleDouble()) {
-				D.roll();
-				listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2());
+			if (D.estDouble()) {
+				listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2(),D);
+				jeu.declancheAction(listeJoueurs.getJoueur());
 				System.out.println("C'est un Double !" + j.getNom() + " se déplace de " + (D.getD1() + D.getD2())
 						+ " cases et arrive sur la case " + j.getPos());
-				jeu.declancheAction(listeJoueurs.getJoueur());
 
-			} else if (D.estDouble()) {
-				D.roll();
-				System.out.println("Trois doubles d'affilée ! Vous finissez en prison !");
+			} else {
+				listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2(),D);
+			jeu.declancheAction(listeJoueurs.getJoueur());
+			System.out.println(listeJoueurs.getJoueur().getNom() + " se déplace de " + (D.getD1() + D.getD2())
+					+ " cases et arrive sur la case " + listeJoueurs.getJoueur().getPos());
 			}
 
 			// Case Départ
-			if (pos1Joueur > j.getPos()) {// !listeJoueurs.getJoueur().enPrison()
+			if (pos1Joueur <= j.getPos()) {// !listeJoueurs.getJoueur().enPrison()
 				System.out.println("Vous êtes passé par la case départ !");
 				j.caseDepart();
 			}
 
 			int choix = 0;
-			System.out.println("afficher plateau normalement");
 			jeu.afficherPlateau(j);
-			while (choix != 4) {	
+			while (choix != 3) {	
 			
 			//Choix des actions
 			System.out.println("Que voulez-vous faire?");
 			System.out.println("1.Piocher une carte");
 			System.out.println("2. Construire une maison");
-			System.out.println("3. Hypothéquer");
-			System.out.println("4. Echanger");
-			System.out.println("5. Passez votre tour");
+			System.out.println("3. Passez votre tour");
 			Scanner in2= new Scanner(System.in);
 		 choix = in2.nextInt();
 			
 			//Réalisation des actions
-		 
-			if (choix==2) { //Construction Maison
-				System.out.println("Voici la liste des Terrains");
-				jeu.parcourirTerrain();
+			if (choix==2) {
+				System.out.println("Voici la liste des Terrains que vous possédez");
+				jeu.afficherTerrainPossedes(j);
 				System.out.println("Indiquez le numéro de la case sur lequel vous voulez construire");
 				Scanner in3 = new Scanner(System.in);
 				int choix2 = in3.nextInt();
 				Terrain t = (Terrain) jeu.getCase(choix2);
 				t.ajoutMaison(1);
 				System.out.println("Le nouveau loyer est de :" + t.calculerLoyer());
-			
-			
 			} else if (choix == 1) {
 				
-			//	System.out.println(j.getNom() + "a pioché :"+chance.piocher());
-			//	System.out.println(j.getNom()+"a pioché"+communaute.piocher());
+				System.out.println(j.getNom() + "a pioché :"+chance.piocher());
+				System.out.println(j.getNom()+"a pioché"+communaute.piocher());
 				
-			}else{
-			}
+			}else if(choix !=3){
 				System.out.println("Vous ne pouvez pas faire ça");
 			}
+		
 
 			listeJoueurs.passerTour();
 
 		}
 	}
 
+	}
 }

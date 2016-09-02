@@ -189,5 +189,12 @@ public class Plateau {
 		
 		return list;
 	}
+	
+	public void afficherTerrainPossedes(Joueur j) {
+		ArrayList<Terrain> list = new ArrayList<Terrain>();
+		for (Terrain t : this.terrainsPossedes(j)) {
+			System.out.println(t.toString());
+		}
+	}
 
 }

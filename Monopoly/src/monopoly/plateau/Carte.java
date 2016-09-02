@@ -1,23 +1,29 @@
 package monopoly.plateau;
 
+import monopoly.gameplay.Joueur;
+
 public class Carte {
 	
-	String effet;
+	String intitule;
+	int effet;
 	int valeur;
-	
 
-	public Carte(String effet,int val) {
+	public Carte(String intitule,int val, int effet) {
+		this.intitule = intitule;
 		this.effet = effet;
 		this.valeur = val;
 		
-		}
+	}
 	
-	public String getEffet() {
+	public int getEffet() {
 		return effet;
+	}
+	public String getIntitule(){
+		return intitule;
 	}
 	
 	public String toString() {
-		return effet;
+		return intitule;
 	}
 	
 
