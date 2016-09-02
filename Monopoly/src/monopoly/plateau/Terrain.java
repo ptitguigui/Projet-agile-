@@ -90,7 +90,7 @@ public class Terrain extends Case{
 				System.out.println("Vous ne pouvez pas faire ca");
 				return terrainAVendre(j);
 			}
-			return terrainAVendre(j);
+			return 0;
 		}
 
 }
