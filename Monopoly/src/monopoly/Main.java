@@ -50,24 +50,20 @@ public class Main {
 			// Déplacement
 			int pos1Joueur = j.getPos();
 			D.roll();
-			listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2(),D);
-			jeu.declancheAction(listeJoueurs.getJoueur());
-			System.out.println(listeJoueurs.getJoueur().getNom() + " se déplace de " + (D.getD1() + D.getD2())
-					+ " cases et arrive sur la case " + listeJoueurs.getJoueur().getPos());
-			System.out.println(j.getNom() + " se déplace de " + (D.getD1() + D.getD2())
-					+ " cases et arrive sur la case " + j.getPos());
-			jeu.declancheAction(listeJoueurs.getJoueur());
+		
 
-			if (D.estDouble() && !D.tripleDouble()) {
-				D.roll();
+
+			if (D.estDouble()) {
 				listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2(),D);
 				jeu.declancheAction(listeJoueurs.getJoueur());
 				System.out.println("C'est un Double !" + j.getNom() + " se déplace de " + (D.getD1() + D.getD2())
 						+ " cases et arrive sur la case " + j.getPos());
 
-			} else if (D.estDouble()) {
-				D.roll();
-				System.out.println("Trois doubles d'affilée ! Vous finissez en prison !");
+			} else {
+				listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2(),D);
+			jeu.declancheAction(listeJoueurs.getJoueur());
+			System.out.println(listeJoueurs.getJoueur().getNom() + " se déplace de " + (D.getD1() + D.getD2())
+					+ " cases et arrive sur la case " + listeJoueurs.getJoueur().getPos());
 			}
 
 			// Case Départ
