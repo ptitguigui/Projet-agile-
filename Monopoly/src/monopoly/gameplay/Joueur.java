@@ -24,7 +24,15 @@ public class Joueur{
         nbToursPrison = 0;
     }
 
-    public String getNom(){
+    public boolean isEnPrison() {
+		return enPrison;
+	}
+
+	public void setEnPrison(boolean enPrison) {
+		this.enPrison = enPrison;
+	}
+
+	public String getNom(){
         return(nom);
     }
 

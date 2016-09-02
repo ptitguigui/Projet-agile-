@@ -20,11 +20,7 @@ public class Main {
 		
 		//initialisation des paquets
 		
-		Paquet chance = new Paquet("chance");
-		Paquet communaute = new Paquet("communaute");
-		
-		chance.initChance();
-		communaute.initCommunaute();	
+			
 		
 
 		ListeJoueurs listeJoueurs = new ListeJoueurs();

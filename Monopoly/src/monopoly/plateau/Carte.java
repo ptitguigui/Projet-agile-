@@ -18,6 +18,9 @@ public class Carte {
 	public int getEffet() {
 		return effet;
 	}
+	public int getValeur(){
+		return valeur;
+	}
 	public String getIntitule(){
 		return intitule;
 	}

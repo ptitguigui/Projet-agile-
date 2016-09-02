@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+import monopoly.gameplay.Des;
 import monopoly.gameplay.Joueur;
 import monopoly.plateau.Plateau;
 import monopoly.plateau.Terrain;
@@ -22,13 +23,8 @@ public class testJoueur {
 	public void test1() {
 		Joueur j1= new Joueur("jean");
 		j1.setPos(5);
-<<<<<<< HEAD
-		assertEquals(j1.getPos(), 5);
-		assertEquals(j1.getCredit(), 1500);
-=======
 		assertEquals(5, j1.getPos());
 		assertEquals(1500, j1.getCredit());
->>>>>>> ad0fce41d262be371bdeb7c43cfd0a3f787eebe2
 		
 	}
 	//@Test
@@ -44,16 +40,10 @@ public class testJoueur {
 	public void test3(){
 		Joueur j=new Joueur("barry");
 		j.paye(20);
-<<<<<<< HEAD
-		assertEquals(j.getCredit(), 1500-20);
-		j.recoit(20);
-		assertEquals(j.getCredit(), 1500);
-=======
 		assertEquals(1480, j.getCredit());
 		j.recoit(20);
 		assertEquals(1500, j.getCredit());
->>>>>>> ad0fce41d262be371bdeb7c43cfd0a3f787eebe2
-		j.seDeplace(4, 6);
+		j.seDeplace(4, 6, new Des());
 		assertEquals(10, j.getPos());
 		
 		
@@ -64,7 +54,7 @@ public class testJoueur {
 	public void test_arrivee_prison(){
 		Joueur test = new Joueur("toto");
 		test.setPos(29);
-		test.seDeplace(0, 1);
+		test.seDeplace(0, 1, new Des());
 		assertEquals(10, test.getPos());
 	}
 
