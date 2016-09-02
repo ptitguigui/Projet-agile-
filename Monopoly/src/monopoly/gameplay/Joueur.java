@@ -45,6 +45,15 @@ public class Joueur{
             credit-=compagnie.getPrix();
             compagnie.setProprietaire(this);
             achats.add(compagnie);
+            System.out.println("Vous avez acheté cette compagnie");
+        }
+    }
+    public void acheter(Terrain terrain){
+        if ( terrain.aVendre() && credit>=terrain.getPrix() ){
+            credit-=terrain.getPrix();
+            terrain.setProprietaire(this);
+            achats.add(terrain);
+            System.out.println("Vous avez acheté ce terrain");
         }
     }
     
@@ -53,6 +62,7 @@ public class Joueur{
             credit-=gare.getPrix();
             gare.setProprietaire(this);
             achats.add(gare);
+            System.out.println("Vous avez acheté cette gare");
         }
 	}
 
@@ -71,17 +81,14 @@ public class Joueur{
     	credit += 10;
     }
     public void seDeplace(int D1, int D2){
-    	//Condition sur la prison à ajouter.
     	Des D = new Des();
     	if(enPrison){
     		deroulementPrison(D1, D2, D);
-    	}
-    	if(this.getPos()+D1+D2 == 30 || D.tripleDouble()){
+    	}else if(this.getPos()+D1+D2 == 30 || D.tripleDouble()){
     		System.out.println("Allez en prison. Déplacement vers la case 10");
     		this.setPos(10);
     		enPrison = true;
-    	}
-    	if(this.getPos()+D1+D2 <=39){
+    	}else if(this.getPos()+D1+D2 <=39){
     		this.setPos(this.getPos()+D1+D2);    		
     	}else{
     		int nb = this.getPos()+D1+D2;
