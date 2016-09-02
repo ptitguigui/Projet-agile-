@@ -7,7 +7,6 @@ import javax.swing.JOptionPane;
 import monopoly.gameplay.Des;
 import monopoly.gameplay.Joueur;
 import monopoly.gameplay.ListeJoueurs;
-import monopoly.plateau.Paquet;
 import monopoly.plateau.Plateau;
 import monopoly.plateau.Terrain;
 
