@@ -27,9 +27,8 @@ public class Main {
 		communaute.initCommunaute();	
 		
 
-
-
 		ListeJoueurs listeJoueurs = new ListeJoueurs();
+		Des D = new Des();
 		System.out.println("Bienvenue dans Monopoly !\nCombien de joueur y a-t-il ?");
 		Scanner in = new Scanner(System.in);
 		int nbJR = in.nextInt();
@@ -44,26 +43,31 @@ public class Main {
 		}
 		while (true) {
 			// Début de Tour
-			Des D = new Des();
 			Joueur j = listeJoueurs.getJoueur();
 			System.out.println("C'est à " + j.getNom() + " de jouer");
-			System.out.println("Vous avez " + j.getCredit()+"€");
+			System.out.println("Vous avez " + j.getCredit());
 
 			// Déplacement
 			int pos1Joueur = j.getPos();
 			D.roll();
-			
-			if (D.estDouble()) {
-				listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2(), D);
+			listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2(),D);
+			jeu.declancheAction(listeJoueurs.getJoueur());
+			System.out.println(listeJoueurs.getJoueur().getNom() + " se déplace de " + (D.getD1() + D.getD2())
+					+ " cases et arrive sur la case " + listeJoueurs.getJoueur().getPos());
+			System.out.println(j.getNom() + " se déplace de " + (D.getD1() + D.getD2())
+					+ " cases et arrive sur la case " + j.getPos());
+			jeu.declancheAction(listeJoueurs.getJoueur());
+
+			if (D.estDouble() && !D.tripleDouble()) {
+				D.roll();
+				listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2(),D);
 				jeu.declancheAction(listeJoueurs.getJoueur());
-				System.out.println("C'est un Double !\n" + j.getNom() + " se déplace de " + (D.getD1() + D.getD2())
+				System.out.println("C'est un Double !" + j.getNom() + " se déplace de " + (D.getD1() + D.getD2())
 						+ " cases et arrive sur la case " + j.getPos());
 
-			}else{
-				listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2(), D);
-				jeu.declancheAction(listeJoueurs.getJoueur());
-				System.out.println(listeJoueurs.getJoueur().getNom() + " se déplace de " + (D.getD1() + D.getD2())
-						+ " cases et arrive sur la case " + listeJoueurs.getJoueur().getPos());
+			} else if (D.estDouble()) {
+				D.roll();
+				System.out.println("Trois doubles d'affilée ! Vous finissez en prison !");
 			}
 
 			// Case Départ
@@ -86,8 +90,8 @@ public class Main {
 			
 			//Réalisation des actions
 			if (choix==2) {
-				System.out.println("Voici la liste des Terrains");
-				jeu.parcourirTerrain();
+				System.out.println("Voici la liste des Terrains que vous possédez");
+				jeu.afficherTerrainPossedes(j);
 				System.out.println("Indiquez le numéro de la case sur lequel vous voulez construire");
 				Scanner in3 = new Scanner(System.in);
 				int choix2 = in3.nextInt();
@@ -99,6 +103,8 @@ public class Main {
 				System.out.println(j.getNom() + "a pioché :"+chance.piocher());
 				System.out.println(j.getNom()+"a pioché"+communaute.piocher());
 				
+			}else if(choix !=3){
+				System.out.println("Vous ne pouvez pas faire ça");
 			}
 		
 
@@ -106,5 +112,6 @@ public class Main {
 
 		}
 	}
+
 	}
 }
