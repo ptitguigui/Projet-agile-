@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import monopoly.gameplay.Des;
 import monopoly.gameplay.Joueur;
 import monopoly.gameplay.ListeJoueurs;
+import monopoly.plateau.Paquet;
 import monopoly.plateau.Plateau;
 import monopoly.plateau.Terrain;
 
@@ -88,10 +89,15 @@ public class Main {
 				System.out.println("Indiquez le numéro de la case sur lequel vous voulez construire");
 				Scanner in3 = new Scanner(System.in);
 				int choix2 = in3.nextInt();
+				if (jeu.terrainsPossedes(j).contains(jeu.getCase(choix2))) {
 				Terrain t = (Terrain) jeu.getCase(choix2);
 				t.ajoutMaison(1);
 				System.out.println("Le nouveau loyer est de :" + t.calculerLoyer());
-				}	
+				}
+				 else {
+					System.out.println("Vous avez rentré un mauvais numéro de maison");
+				}
+				}
 			}else if(choix !=2){
 				System.out.println("Vous ne pouvez pas faire ça");
 			}
