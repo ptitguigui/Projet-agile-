@@ -55,18 +55,17 @@ public class Main {
 			int pos1Joueur = j.getPos();
 			D.roll();
 			listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2());
-			jeu.declancheAction(listeJoueurs.getJoueur());
 			System.out.println(listeJoueurs.getJoueur().getNom() + " se déplace de " + (D.getD1() + D.getD2())
 					+ " cases et arrive sur la case " + listeJoueurs.getJoueur().getPos());
-			System.out.println(j.getNom() + " se déplace de " + (D.getD1() + D.getD2())
-					+ " cases et arrive sur la case " + j.getPos());
+			jeu.declancheAction(listeJoueurs.getJoueur());
+
 
 			if (D.estDouble() && !D.tripleDouble()) {
 				D.roll();
 				listeJoueurs.getJoueur().seDeplace(D.getD1(), D.getD2());
-				jeu.declancheAction(listeJoueurs.getJoueur());
 				System.out.println("C'est un Double !" + j.getNom() + " se déplace de " + (D.getD1() + D.getD2())
 						+ " cases et arrive sur la case " + j.getPos());
+				jeu.declancheAction(listeJoueurs.getJoueur());
 
 			} else if (D.estDouble()) {
 				D.roll();
@@ -93,7 +92,8 @@ public class Main {
 		 choix = in2.nextInt();
 			
 			//Réalisation des actions
-			if (choix==2) {
+		 
+			if (choix==2) { //Construction Maison
 				System.out.println("Voici la liste des Terrains");
 				jeu.parcourirTerrain();
 				System.out.println("Indiquez le numéro de la case sur lequel vous voulez construire");
@@ -102,6 +102,8 @@ public class Main {
 				Terrain t = (Terrain) jeu.getCase(choix2);
 				t.ajoutMaison(1);
 				System.out.println("Le nouveau loyer est de :" + t.calculerLoyer());
+			
+			
 			} else if (choix == 1) {
 				
 				System.out.println(j.getNom() + "a pioché :"+chance.piocher());
