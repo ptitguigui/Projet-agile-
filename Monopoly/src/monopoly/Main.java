@@ -70,18 +70,17 @@ public class Main {
 
 			int choix = 0;
 			jeu.afficherPlateau(j);
-			while (choix != 3) {	
+			while (choix != 2) {	
 			
 			//Choix des actions
 			System.out.println("Que voulez-vous faire?");
-			System.out.println("1.Piocher une carte");
-			System.out.println("2. Construire une maison");
-			System.out.println("3. Passez votre tour");
+			System.out.println("1. Construire une maison");
+			System.out.println("2. Passez votre tour");
 			Scanner in2= new Scanner(System.in);
 		 choix = in2.nextInt();
 			
 			//Réalisation des actions
-			if (choix==2) {
+			if (choix==1) {
 				System.out.println("Voici la liste des Terrains que vous possédez");
 				jeu.afficherTerrainPossedes(j);
 				System.out.println("Indiquez le numéro de la case sur lequel vous voulez construire");
@@ -90,12 +89,8 @@ public class Main {
 				Terrain t = (Terrain) jeu.getCase(choix2);
 				t.ajoutMaison(1);
 				System.out.println("Le nouveau loyer est de :" + t.calculerLoyer());
-			} else if (choix == 1) {
-				
-				System.out.println(j.getNom() + "a pioché :"+chance.piocher());
-				System.out.println(j.getNom()+"a pioché"+communaute.piocher());
-				
-			}else if(choix !=3){
+							
+			}else if(choix !=2){
 				System.out.println("Vous ne pouvez pas faire ça");
 			}
 		
