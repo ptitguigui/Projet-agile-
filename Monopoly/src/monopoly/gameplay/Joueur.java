@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 import monopoly.plateau.Case;
 import monopoly.plateau.Compagnie;
-import monopoly.plateau.Terrain;
 import monopoly.plateau.Gare;
+import monopoly.plateau.Terrain;
 
 public class Joueur{
     String nom;
