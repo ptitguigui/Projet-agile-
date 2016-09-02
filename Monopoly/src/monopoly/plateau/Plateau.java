@@ -53,6 +53,7 @@ public class Plateau {
 		
 	}
 	public void parcourirPlateau(){
+		
 		for (int i = 0; i <plateau.size(); i++) {
 			System.out.println(plateau.get(i).toString());
 		}
@@ -60,6 +61,66 @@ public class Plateau {
 	
 	public Case getCase(int i) {
 		return plateau.get(i);
+	}
+	
+	public void afficherPlateau(Joueur courant) {
+		
+		int posJoueur = courant.getPos();
+		System.out.println("pos Joueur est"+posJoueur);
+		System.out.println(posJoueur+12);
+		System.out.println(posJoueur-6);
+		
+		 
+		
+		for (int i=posJoueur-6; i<posJoueur+12; i++) {
+			if(plateau.get(i).numero == posJoueur) {
+				System.out.print("-X-");
+			}
+			if (plateau.get(i) instanceof Gare) {
+				System.out.print("-G-");
+			}
+			else if (plateau.get(i) instanceof Terrain) {
+				System.out.print("-T-");
+			}
+			else if (plateau.get(i) instanceof Compagnie) {
+				System.out.println("-C-");
+			}
+			
+		}
+		System.out.println();
+		
+		for (int i=posJoueur-6; i<posJoueur+12; i++) {
+			if (plateau.get(i) instanceof Gare) {
+				
+				Gare tmp = (Gare) plateau.get(i);
+				if (tmp.proprio == courant) {
+					System.out.print("v");
+				} else if (plateau.contains(tmp.proprio)) {
+					System.out.print("x");
+				}
+				
+			}
+			else if (plateau.get(i) instanceof Terrain) {
+				
+				Terrain tmp = (Terrain) plateau.get(i);
+				if (tmp.proprio == courant) {
+					System.out.print("v");
+				} else if (plateau.contains(tmp.proprio)) {
+					System.out.print("x");
+				}
+				
+			}
+			else if (plateau.get(i) instanceof Compagnie) {
+				Compagnie tmp = (Compagnie) plateau.get(i);
+				if (tmp.proprio == courant) {
+					System.out.print("v");
+				} else if (plateau.contains(tmp.proprio)) {
+					System.out.print("x");
+				}
+			}
+			
+		}
+		
 	}
 	
 	public void declancheAction(Joueur j){

@@ -20,7 +20,7 @@ public class Main {
 
 		// Initialisation Paquets
 		
-		Carte[] ch = {
+	/**	Carte[] ch = {
 		new Carte("Amende pour exces de vitesse payez 1000",1000),
 		new Carte("La banque vous verse 5000",5000),
 		new Carte("Impose pour les reparations de voirie, payez 4000/maison et 11500/hotel",(4000*nbMaisonJoueur)+(11500*nbHotelJoueur)),
@@ -61,7 +61,7 @@ public class Main {
 			chance.add(ch[i]);
 			communaute.add(com[i]);
 		}
-
+**/
 
 		ListeJoueurs listeJoueurs = new ListeJoueurs();
 		Des D = new Des();
@@ -112,6 +112,8 @@ public class Main {
 			}
 
 			int choix = 0;
+			System.out.println("afficher plateau normalement");
+			jeu.afficherPlateau(j);
 			while (choix != 4) {	
 			
 			//Choix des actions
@@ -136,8 +138,8 @@ public class Main {
 				System.out.println("Le nouveau loyer est de :" + t.calculerLoyer());
 			} else if (choix == 1) {
 				
-				System.out.println(j.getNom() + "a pioché :"+chance.piocher());
-				System.out.println(j.getNom()+"a pioché"+communaute.piocher());
+			//	System.out.println(j.getNom() + "a pioché :"+chance.piocher());
+			//	System.out.println(j.getNom()+"a pioché"+communaute.piocher());
 				
 			}else{
 			}
