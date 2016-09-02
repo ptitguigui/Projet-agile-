@@ -75,7 +75,10 @@ public class Terrain extends Case{
 			}else if(this.getProprietaire() == j){
 				System.out.println("Ceci est votre propriétée, bon séjour.");
 			}else if(this.getProprietaire() != j){
-				j.paye(this.calculerLoyer());
+					int tmpLoyer = this.calculerLoyer();
+					j.paye(tmpLoyer); 				
+					this.getProprietaire().recoit(tmpLoyer);
+				
 			}
 			}
 		}
