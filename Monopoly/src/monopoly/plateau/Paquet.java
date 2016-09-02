@@ -57,11 +57,13 @@ public class Paquet {
 		for (int i = 0; i < ch.length; i++) {
 			paquet.add(ch[i]);
 		}
+		Collections.shuffle(paquet);
 	}
 	public void initCommunaute(){
 		for (int i = 0; i < com.length; i++) {
 			paquet.add(com[i]);
 		}
+		Collections.shuffle(paquet);
 	}
 
 	public Carte piocher() {
@@ -80,11 +82,6 @@ public class Paquet {
 	public Carte get(int i) {
 
 		return paquet.get(i);
-	}
-
-	public void trier() {
-
-		Collections.shuffle(paquet);
 	}
 
 	public void affiche(){
