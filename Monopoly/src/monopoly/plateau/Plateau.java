@@ -105,10 +105,10 @@ public class Plateau {
 		for (int i=posJoueur-6; i<posJoueur+12; i++) {
 			posliste = i;
 			if (i < 0) {
-				posliste = i+39;
+				posliste = i+40;
 			}
 			if (i > 39) {
-				posliste =i-39; 
+				posliste =i-40; 
 			}
 		
 			if (plateau.get(posliste) instanceof Gare) {
@@ -131,7 +131,7 @@ public class Plateau {
 			else if (plateau.get(posliste) instanceof CaseParc) {
 				System.out.print("-*-");
 			}
-			else if (plateau.get(posliste) instanceof CaseParc) {
+			else if (plateau.get(posliste) instanceof CaseDepart) {
 				System.out.print("-D-");
 			}
 			
@@ -142,15 +142,15 @@ public class Plateau {
 		for (int i=posJoueur-6; i<posJoueur+12; i++) {
 			posliste=i;
 			if (i <0) {
-				posliste=i+39;
+				posliste=i+40;
 			}
 			if (i>39) {
-				posliste =i-39; 
+				posliste =i-40; 
 			}
 			
 			if (plateau.get(posliste) instanceof Gare) {
 				
-				Gare tmp = (Gare) plateau.get(i);
+				Gare tmp = (Gare) plateau.get(posliste);
 				if (tmp.proprio == courant) {
 					System.out.print(" v ");
 				} else if (plateau.contains(tmp.proprio)) {
@@ -163,7 +163,7 @@ public class Plateau {
 			}
 			else if (plateau.get(posliste) instanceof Terrain) {
 				
-				Terrain tmp = (Terrain) plateau.get(i);
+				Terrain tmp = (Terrain) plateau.get(posliste);
 				if (tmp.proprio == courant) {
 					System.out.print(" v ");
 				} else if (plateau.contains(tmp.proprio)) {
@@ -175,7 +175,7 @@ public class Plateau {
 				
 			}
 			else if (plateau.get(posliste) instanceof Compagnie) {
-				Compagnie tmp = (Compagnie) plateau.get(i);
+				Compagnie tmp = (Compagnie) plateau.get(posliste);
 				if (tmp.proprio == courant) {
 					System.out.print(" v ");
 				} else if (plateau.contains(tmp.proprio)) {
