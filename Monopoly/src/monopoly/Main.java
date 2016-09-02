@@ -112,7 +112,7 @@ public class Main {
 			int choix = 0;
 			System.out.println("afficher plateau normalement");
 			jeu.afficherPlateau(j);
-			while (choix != 4) {
+			while (choix != 5) {
 
 				// Choix des actions
 				System.out.println("Que voulez-vous faire?");
@@ -143,7 +143,7 @@ public class Main {
 					// System.out.println(j.getNom()+"a
 					// pioché"+communaute.piocher());
 
-				} else {
+				} else if (choix!=5){
 				
 				System.out.println("Vous ne pouvez pas faire ça");
 				}
